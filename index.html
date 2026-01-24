@@ -8,11 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: "Poppins", sans-serif;
@@ -20,6 +16,7 @@
       color: #fff;
     }
 
+    /* HEADER */
     header {
       position: absolute;
       top: 0;
@@ -37,10 +34,7 @@
       letter-spacing: 1px;
     }
 
-    nav {
-      display: flex;
-      align-items: center;
-    }
+    nav { display: flex; align-items: center; }
 
     nav a {
       margin-left: 30px;
@@ -51,9 +45,7 @@
       cursor: pointer;
     }
 
-    nav a:hover {
-      opacity: 0.7;
-    }
+    nav a:hover { opacity: 0.7; }
 
     .menu-toggle {
       display: none;
@@ -65,10 +57,7 @@
     .hero {
       height: 100vh;
       background:
-        linear-gradient(
-          rgba(15,17,21,0.6),
-          rgba(15,17,21,0.9)
-        ),
+        linear-gradient(rgba(15,17,21,0.6), rgba(15,17,21,0.9)),
         url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
       background-size: cover;
       background-position: center;
@@ -77,9 +66,7 @@
       padding: 0 80px;
     }
 
-    .hero-content {
-      max-width: 700px;
-    }
+    .hero-content { max-width: 700px; }
 
     h1 {
       font-family: "Playfair Display", serif;
@@ -109,52 +96,124 @@
       color: #000;
     }
 
-    .cn {
-      display: none;
+    .cn { display: none; }
+
+    /* ===== ELITE SECTION ===== */
+    .elite-section {
+      padding: 120px 80px;
+      background: #0f1115;
     }
 
-    /* 📱 Mobile */
-   @media (max-width: 768px) {
+    .elite-header { margin-bottom: 80px; }
 
-  nav a {
-    white-space: nowrap;
-    font-size: 12px;
-  }
+    .elite-header .dot {
+      width: 10px;
+      height: 10px;
+      background: #c58b3c;
+      border-radius: 50%;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
 
+    .elite-header h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
 
-      .menu-toggle {
-        display: block;
-      }
+    .elite-header p {
+      font-size: 14px;
+      opacity: 0.7;
+      letter-spacing: 1px;
+    }
+
+    .elite-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .elite-card {
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+      border-radius: 6px;
+      opacity: 0;
+      transition: all 1s ease;
+    }
+
+    .slide-left { transform: translateX(-80px); }
+    .slide-right { transform: translateX(80px); }
+
+    .elite-card.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .elite-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.6);
+    }
+
+    .elite-content {
+      position: relative;
+      z-index: 2;
+      padding: 30px;
+    }
+
+    .elite-content .num {
+      font-size: 12px;
+      opacity: 0.6;
+    }
+
+    .elite-content h3 {
+      margin: 10px 0;
+      font-size: 20px;
+    }
+
+    .elite-content h3 small {
+      display: block;
+      font-size: 12px;
+      opacity: 0.6;
+      margin-top: 4px;
+    }
+
+    .elite-content p {
+      font-size: 14px;
+      line-height: 1.7;
+      opacity: 0.85;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      header { padding: 20px 30px; }
 
       nav {
+        display: none;
         position: absolute;
         top: 80px;
         right: 30px;
         background: #0f1115;
         padding: 20px;
-        display: none;
         flex-direction: column;
       }
 
-      nav a {
-        margin: 10px 0;
-      }
+      nav.show { display: flex; }
 
-      nav.show {
-        display: flex;
-      }
+      nav a { margin: 10px 0; }
 
-      .hero {
-        padding: 0 30px;
-      }
+      .menu-toggle { display: block; }
 
-      h1 {
-        font-size: 42px;
-      }
+      .hero { padding: 0 30px; }
 
-      p {
-        font-size: 16px;
-      }
+      h1 { font-size: 42px; }
+
+      .elite-section { padding: 80px 30px; }
+
+      .elite-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -163,9 +222,7 @@
 
 <header>
   <div class="logo">EXPLORE AFRICA.</div>
-
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
   <nav id="nav-menu">
     <a href="index.html">HOME</a>
     <a href="about.html">ABOUT</a>
@@ -176,22 +233,67 @@
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <h1 class="en">Explore Africa</h1>
     <h1 class="cn">探索非洲</h1>
 
-    <p class="en">
-      Tailor-made journeys across Africa.
-      Nature, culture and unforgettable moments.
-    </p>
-
-    <p class="cn">
-      为你量身定制非洲之旅，
-      融合自然、文化与独一无二的体验。
-    </p>
+    <p class="en">Tailor-made journeys across Africa.<br>Nature, culture and unforgettable moments.</p>
+    <p class="cn">为你量身定制非洲之旅，融合自然、文化与独一无二的体验。</p>
 
     <a href="contact.html" class="cta-btn">CONTACT US</a>
+  </div>
+</section>
+
+<!-- ELITE RESOURCES -->
+<section class="elite-section">
+  <div class="elite-header">
+    <span class="dot"></span>
+    <h2>顶级资源掌控</h2>
+    <p>Elite Resources — Six Exclusive Guarantees</p>
+  </div>
+
+  <div class="elite-grid">
+    <!-- 酒店 -->
+    <div class="elite-card slide-left">
+      <div class="elite-bg" style="background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb');"></div>
+      <div class="elite-content">
+        <span class="num">01</span>
+        <h3>合作酒店 <small>Partner Hotels</small></h3>
+        <p>与 Cresta、Wilderness Safaris、Holiday Inn 等高端营地及酒店集团深度合作，全年切房保障。</p>
+      </div>
+    </div>
+
+    <!-- 狩猎 / 草原 -->
+    <div class="elite-card slide-right">
+      <div class="elite-bg" style="background-image:url('https://images.unsplash.com/photo-1516426122078-c23e76319801');"></div>
+      <div class="elite-content">
+        <span class="num">02</span>
+        <h3>独家猎场 <small>Private Hunting Grounds</small></h3>
+        <p>非洲原生草原猎区，持牌合法运营，专业猎导陪同，严格遵守当地法规。</p>
+      </div>
+    </div>
+
+    <!-- 服务 -->
+    <div class="elite-card slide-left">
+      <div class="elite-bg" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d');"></div>
+      <div class="elite-content">
+        <span class="num">03</span>
+        <h3>24小时全链路服务 <small>24/7 End-to-End</small></h3>
+        <p>从签证协助到机场 VIP 通道，全程中文管家，自主行程系统实时追踪。</p>
+      </div>
+    </div>
+
+    <!-- 大巴车 -->
+    <div class="elite-card slide-right">
+      <div class="elite-bg" style="background-image:url('https://images.unsplash.com/photo-1617093727343-374698b1b08d');"></div>
+      <div class="elite-content">
+        <span class="num">04</span>
+        <h3>安全与舒适 <small>Safety & Comfort</small></h3>
+        <p>奢华定制大巴车队，卫星通讯系统，全程医疗支持，确保每一段旅程安全无忧。</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -201,13 +303,20 @@
   }
 
   function setLang(lang) {
-    document.querySelectorAll('.en').forEach(e => {
-      e.style.display = lang === 'en' ? 'block' : 'none';
-    });
-    document.querySelectorAll('.cn').forEach(e => {
-      e.style.display = lang === 'cn' ? 'block' : 'none';
-    });
+    document.querySelectorAll('.en').forEach(e => e.style.display = lang === 'en' ? 'block' : 'none');
+    document.querySelectorAll('.cn').forEach(e => e.style.display = lang === 'cn' ? 'block' : 'none');
   }
+
+  const cards = document.querySelectorAll('.elite-card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
 </script>
 
 </body>
