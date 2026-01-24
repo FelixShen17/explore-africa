@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Explore Africa – Luxury Safari Tours</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #0f1115;
+      color: #ffffff;
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 30px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    .hero {
+      height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.6)),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 0 80px;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 64px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+
+    .hero button {
+      padding: 14px 36px;
+      background: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      font-size: 14px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hero button:hover {
+      background: #ffffff;
+      color: #000;
+    }
+
+    section {
+      padding: 100px 80px;
+      background-color: #0f1115;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: 40px;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+    }
+
+    .card {
+      background-color: #161922;
+      padding: 30px;
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      font-family: "Playfair Display", serif;
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+
+    .card p {
+      font-size: 14px;
+      line-height: 1.7;
+      opacity: 0.85;
+    }
+
+    footer {
+      padding: 40px;
+      text-align: center;
+      background-color: #0b0d12;
+      font-size: 13px;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 20px 30px;
+      }
+
+      .hero {
+        padding: 0 30px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      section {
+        padding: 80px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">EXPLORE AFRICA.</div>
+    <nav>
+      <a href="#">ALL TRIPS</a>
+      <a href="#">DESTINATIONS</a>
+      <a href="#">ABOUT US</a>
+      <a href="#">CONTACT</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Explore Africa</h1>
+      <p>
+        Curated luxury safari experiences across Africa.
+        Discover wildlife, landscapes, and cultures with
+        world-class private tours.
+      </p>
+      <button>DISCOVER JOURNEYS</button>
+    </div>
+  </div>
+
+  <section>
+    <h2 class="section-title">Our Signature Experiences</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Private Safari</h3>
+        <p>
+          Tailor-made luxury safaris with expert guides,
+          private lodges, and unforgettable wildlife encounters.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Cultural Journeys</h3>
+        <p>
+          Connect with local traditions, history, and communities
+          through immersive cultural experiences.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Adventure Travel</h3>
+        <p>
+          From deserts to mountains, experience Africa’s most
+          breathtaking adventures in comfort and style.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Explore Africa. All rights reserved.
+  </footer>
+
+</body>
+</html>
