@@ -1,92 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Explore Africa – Luxury Safari Tours</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Explore Africa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    .contact-actions {
-  display: flex;
-  gap: 20px;
-  margin-top: 30px;
-}
-
-.whatsapp-btn {
-  display: inline-block;
-  padding: 14px 28px;
-  border: 1px solid #fff;
-  color: #fff;
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 2px;
-  transition: all 0.3s ease;
-}
-
-.whatsapp-btn:hover {
-  background: #25D366;
-  border-color: #25D366;
-  color: #000;
-}
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    .contact-box {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  max-width: 1000px;
-}
-
-.contact-info p {
-  margin-bottom: 16px;
-  font-size: 14px;
-  opacity: 0.85;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  background: #0f1115;
-  border: 1px solid #333;
-  padding: 14px;
-  margin-bottom: 20px;
-  color: #fff;
-  font-family: inherit;
-}
-
-.contact-form textarea {
-  min-height: 120px;
-  resize: none;
-}
-
-.contact-form button {
-  background: #fff;
-  color: #000;
-  border: none;
-  padding: 14px;
-  font-size: 13px;
-  letter-spacing: 2px;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
-  opacity: 0.8;
-}
-
-@media (max-width: 768px) {
-  .contact-box {
-    grid-template-columns: 1fr;
-  }
-}
-
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: "Poppins", sans-serif;
       background: #0f1115;
-      color: #ffffff;
+      color: #fff;
     }
 
     header {
@@ -102,30 +33,43 @@
 
     .logo {
       font-family: "Playfair Display", serif;
-      font-size: 24px;
+      font-size: 22px;
       letter-spacing: 1px;
     }
 
-   <nav>
-  <a href="index.html">HOME</a>
-  <a href="about.html">ABOUT</a>
-  <a href="contact.html">CONTACT</a>
-  <a onclick="setLang('en')">EN</a>
-  <a onclick="setLang('cn')">中文</a>
-</nav>
-
-
-    .lang-switch {
-      border: 1px solid #fff;
-      padding: 6px 14px;
-      font-size: 12px;
+    nav {
+      display: flex;
+      align-items: center;
     }
 
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 13px;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* HERO */
     .hero {
       height: 100vh;
       background:
-        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.65)),
-        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80");
+        linear-gradient(
+          rgba(15,17,21,0.6),
+          rgba(15,17,21,0.9)
+        ),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
       background-size: cover;
       background-position: center;
       display: flex;
@@ -133,190 +77,133 @@
       padding: 0 80px;
     }
 
-    .hero h1 {
-      font-family: "Playfair Display", serif;
-      font-size: 64px;
-      margin-bottom: 20px;
+    .hero-content {
+      max-width: 700px;
     }
 
-    .hero p {
-      font-size: 16px;
-      line-height: 1.8;
-      margin-bottom: 40px;
-      max-width: 600px;
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 64px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.9;
       opacity: 0.9;
     }
 
-    .hero button {
+    .cta-btn {
+      display: inline-block;
+      margin-top: 30px;
       padding: 14px 36px;
-      background: transparent;
       border: 1px solid #fff;
       color: #fff;
-      font-size: 14px;
-      letter-spacing: 2px;
-      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 3px;
+      font-size: 12px;
     }
 
-    .hero button:hover {
+    .cta-btn:hover {
       background: #fff;
       color: #000;
     }
 
-    section {
-      padding: 100px 80px;
+    .cn {
+      display: none;
     }
 
-    h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 40px;
-      margin-bottom: 40px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 40px;
-    }
-
-    .card {
-      background: #161922;
-      padding: 30px;
-      border-radius: 6px;
-    }
-
-    .card h3 {
-      font-family: "Playfair Display", serif;
-      margin-bottom: 15px;
-      font-size: 22px;
-    }
-
-    .card p {
-      font-size: 14px;
-      line-height: 1.7;
-      opacity: 0.85;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px;
-      font-size: 13px;
-      opacity: 0.6;
-      background: #0b0d12;
-    }
-
+    /* 📱 Mobile */
     @media (max-width: 768px) {
-      header { padding: 20px 30px; }
-      .hero { padding: 0 30px; }
-      .hero h1 { font-size: 42px; }
-      section { padding: 80px 30px; }
+      header {
+        padding: 20px 30px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        position: absolute;
+        top: 80px;
+        right: 30px;
+        background: #0f1115;
+        padding: 20px;
+        display: none;
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 10px 0;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .hero {
+        padding: 0 30px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      p {
+        font-size: 16px;
+      }
     }
-
-    .cn { display: none; }
   </style>
-
 </head>
 
 <body>
 
 <header>
   <div class="logo">EXPLORE AFRICA.</div>
-  <nav>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <nav id="nav-menu">
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="destination.html">DESTINATION</a>
+    <a href="contact.html">CONTACT</a>
     <a onclick="setLang('en')">EN</a>
     <a onclick="setLang('cn')">中文</a>
   </nav>
 </header>
 
-<div class="hero">
-  <div>
+<section class="hero">
+  <div class="hero-content">
     <h1 class="en">Explore Africa</h1>
-    <h1 class="cn">寻迹非洲</h1>
+    <h1 class="cn">探索非洲</h1>
 
     <p class="en">
-      Curated luxury safari experiences across Africa.
-      Discover wildlife, landscapes and cultures with private tours.
+      Tailor-made journeys across Africa.
+      Nature, culture and unforgettable moments.
     </p>
+
     <p class="cn">
-      我们为您定制高端非洲旅行体验，
-      探索野生动物、壮丽自然与独特文化。
+      为你量身定制非洲之旅，
+      融合自然、文化与独一无二的体验。
     </p>
 
-    <button class="en">DISCOVER JOURNEYS</button>
-    <button class="cn">探索旅程</button>
-  </div>
-</div>
-
-<section>
-  <h2 class="en">Our Signature Experiences</h2>
-  <h2 class="cn">我们的核心旅行体验</h2>
-
-  <div class="cards">
-    <div class="card">
-      <h3 class="en">Private Safari</h3>
-      <h3 class="cn">私人野奢 Safari</h3>
-      <p class="en">Luxury safaris with expert guides and exclusive lodges.</p>
-      <p class="cn">专业向导带领，入住顶级野奢营地的私人 Safari 体验。</p>
-    </div>
-
-    <div class="card">
-      <h3 class="en">Cultural Journeys</h3>
-      <h3 class="cn">文化深度之旅</h3>
-      <p class="en">Authentic connections with local traditions and history.</p>
-      <p class="cn">深入非洲部落与历史，感受真实而独特的文化。</p>
-    </div>
-
-    <div class="card">
-      <h3 class="en">Adventure Travel</h3>
-      <h3 class="cn">探险旅行</h3>
-      <p class="en">Deserts, mountains, oceans — adventure in style.</p>
-      <p class="cn">沙漠、山脉、海岸线，高端而刺激的冒险体验。</p>
-    </div>
+    <a href="contact.html" class="cta-btn">CONTACT US</a>
   </div>
 </section>
-<section>
-  <h2 class="en">Contact Us</h2>
-  <h2 class="cn">联系我们</h2>
-
-  <div class="contact-box">
-    <div class="contact-info">
-      <p class="en">
-        Ready to plan your journey?<br>
-        Get in touch with our travel specialists.
-      </p>
-      <p class="cn">
-        准备开启您的非洲之旅？<br>
-        欢迎联系我们的旅行顾问。
-      </p>
-
-      <p>Email: <strong>公司邮箱@exploreafrica.com</strong></p>
-      <p>WhatsApp: <strong>+263（0）772677777</strong></p>
-      <p>Location: Zimbabwe｜Harare </p>
-    </div>
-
-   <div class="contact-actions">
-  <a class="whatsapp-btn"
-     href="https://wa.me/2630772677777?text=Hello%20I%20am%20interested%20in%20an%20Africa%20trip"
-     target="_blank">
-     WhatsApp Us
-  </a>
-
-  <a class="whatsapp-btn cn"
-     href="https://wa.me/2630772677777?text=你好，我想咨询非洲旅行"
-     target="_blank">
-     WhatsApp 联系我们
-  </a>
-</div>
-
-  </div>
-</section>
-
-<footer>
-  © 2026 Explore Africa. All rights reserved.
-</footer>
 
 <script>
+  function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("show");
+  }
+
   function setLang(lang) {
-    document.querySelectorAll('.en').forEach(e => e.style.display = lang === 'en' ? 'block' : 'none');
-    document.querySelectorAll('.cn').forEach(e => e.style.display = lang === 'cn' ? 'block' : 'none');
+    document.querySelectorAll('.en').forEach(e => {
+      e.style.display = lang === 'en' ? 'block' : 'none';
+    });
+    document.querySelectorAll('.cn').forEach(e => {
+      e.style.display = lang === 'cn' ? 'block' : 'none';
+    });
   }
 </script>
 
