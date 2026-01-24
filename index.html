@@ -8,7 +8,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: "Poppins", sans-serif;
@@ -33,7 +37,10 @@
       letter-spacing: 1px;
     }
 
-    nav { display: flex; align-items: center; }
+    nav {
+      display: flex;
+      align-items: center;
+    }
 
     nav a {
       margin-left: 30px;
@@ -44,7 +51,9 @@
       cursor: pointer;
     }
 
-    nav a:hover { opacity: 0.7; }
+    nav a:hover {
+      opacity: 0.7;
+    }
 
     .menu-toggle {
       display: none;
@@ -52,6 +61,7 @@
       cursor: pointer;
     }
 
+    /* HERO */
     .hero {
       height: 100vh;
       background:
@@ -64,13 +74,21 @@
       padding: 0 80px;
     }
 
+    .hero-content {
+      max-width: 700px;
+    }
+
     h1 {
       font-family: "Playfair Display", serif;
       font-size: 64px;
       margin-bottom: 30px;
     }
 
-    p { font-size: 18px; line-height: 1.9; opacity: 0.9; }
+    p {
+      font-size: 18px;
+      line-height: 1.9;
+      opacity: 0.9;
+    }
 
     .cta-btn {
       display: inline-block;
@@ -81,173 +99,197 @@
       text-decoration: none;
       letter-spacing: 3px;
       font-size: 12px;
+      transition: all .3s ease;
     }
 
-    .cta-btn:hover { background: #fff; color: #000; }
+    .cta-btn:hover {
+      background: #fff;
+      color: #000;
+    }
 
     .cn { display: none; }
 
-    /* ===== ELITE ===== */
-    .elite-section {
+    /* ====== CARDS SECTION ====== */
+    .features {
       padding: 120px 80px;
-    }
-
-    .elite-header { margin-bottom: 80px; }
-
-    .elite-header .dot {
-      width: 10px;
-      height: 10px;
-      background: #c58b3c;
-      border-radius: 50%;
-      display: inline-block;
-      margin-bottom: 20px;
-    }
-
-    .elite-header h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 38px;
-    }
-
-    .elite-header p {
-      font-size: 14px;
-      opacity: 0.7;
-      letter-spacing: 1px;
-    }
-
-    .elite-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
     }
 
-    .elite-card {
+    .card {
+      height: 420px;
       position: relative;
-      height: 320px;
       overflow: hidden;
-      border-radius: 6px;
+      border-radius: 16px;
+      background-size: cover;
+      background-position: center;
+      transform: translateX(80px);
       opacity: 0;
-      transition: all 0.8s ease;
+      transition:
+        transform 0.9s cubic-bezier(.19,1,.22,1),
+        opacity 0.9s ease,
+        box-shadow 0.4s ease;
     }
 
-    .slide-left { transform: translateX(-80px); }
-    .slide-right { transform: translateX(80px); }
+    .card.left {
+      transform: translateX(-80px);
+    }
 
-    .elite-card.show {
-      opacity: 1;
+    .card.show {
       transform: translateX(0);
+      opacity: 1;
     }
 
-    .elite-card:hover {
-      transform: scale(1.035);
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.15));
+    }
+
+    .card-content {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      right: 30px;
+      z-index: 2;
+    }
+
+    .card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 15px;
+      opacity: 0.9;
+    }
+
+    /* HOVER 高级微动效 */
+    .card:hover {
+      transform: scale(1.06);
       box-shadow: 0 30px 80px rgba(0,0,0,0.55);
     }
 
-    .elite-bg {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      filter: brightness(0.6);
-      transition: transform 1.2s ease;
-    }
-
-    .elite-card:hover .elite-bg {
-      transform: scale(1.08);
-    }
-
-    .elite-content {
-      position: relative;
-      z-index: 2;
-      padding: 30px;
-    }
-
-    .elite-content h3 {
-      margin: 10px 0;
-      font-size: 20px;
-    }
-
-    .elite-content small {
-      display: block;
-      font-size: 12px;
-      opacity: 0.6;
-    }
-
-    .elite-content p {
-      font-size: 14px;
-      line-height: 1.7;
-      opacity: 0.85;
+    /* MOBILE */
+    @media (max-width: 1024px) {
+      .features {
+        grid-template-columns: 1fr;
+        padding: 80px 30px;
+      }
     }
 
     @media (max-width: 768px) {
-      .elite-section { padding: 80px 30px; }
-      .elite-grid { grid-template-columns: 1fr; }
+      .menu-toggle { display: block; }
+
+      nav {
+        position: absolute;
+        top: 80px;
+        right: 30px;
+        background: #0f1115;
+        padding: 20px;
+        display: none;
+        flex-direction: column;
+      }
+
+      nav a { margin: 10px 0; }
+
+      nav.show { display: flex; }
+
+      .hero { padding: 0 30px; }
+
+      h1 { font-size: 42px; }
+      p { font-size: 16px; }
     }
   </style>
 </head>
 
 <body>
 
+<header>
+  <div class="logo">EXPLORE AFRICA.</div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <nav id="nav-menu">
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="destination.html">DESTINATION</a>
+    <a href="contact.html">CONTACT</a>
+    <a onclick="setLang('en')">EN</a>
+    <a onclick="setLang('cn')">中文</a>
+  </nav>
+</header>
+
 <section class="hero">
-  <div>
-    <h1>Explore Africa</h1>
-    <p>Tailor-made journeys across Africa.<br>Nature, culture and unforgettable moments.</p>
-    <a href="#" class="cta-btn">CONTACT US</a>
+  <div class="hero-content">
+    <h1 class="en">Explore Africa</h1>
+    <h1 class="cn">探索非洲</h1>
+
+    <p class="en">Tailor-made journeys across Africa.</p>
+    <p class="cn">为你量身定制非洲之旅。</p>
+
+    <a href="contact.html" class="cta-btn">CONTACT US</a>
   </div>
 </section>
 
-<section class="elite-section">
-  <div class="elite-header">
-    <span class="dot"></span>
-    <h2>顶级资源掌控</h2>
-    <p>Elite Resources — Six Exclusive Guarantees</p>
-  </div>
+<!-- ====== FEATURES ====== -->
+<section class="features">
 
-  <div class="elite-grid">
-    <!-- 酒店 -->
-    <div class="elite-card slide-left">
-      <div class="elite-bg" style="background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb');"></div>
-      <div class="elite-content">
-        <h3>合作酒店 <small>Partner Hotels</small></h3>
-        <p>与多家高端营地及酒店集团深度合作，全年切房保障。</p>
-      </div>
-    </div>
-
-    <!-- 独家猎场（新草原动物图） -->
-    <div class="elite-card slide-right">
-      <div class="elite-bg" style="background-image:url('https://images.unsplash.com/photo-1508672019048-805c876b67e2');"></div>
-      <div class="elite-content">
-        <h3>独家猎场 <small>Private Hunting Grounds</small></h3>
-        <p>非洲广袤草原猎区，多种野生动物共存，持牌合法运营。</p>
-      </div>
-    </div>
-
-    <!-- 服务 -->
-    <div class="elite-card slide-left">
-      <div class="elite-bg" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d');"></div>
-      <div class="elite-content">
-        <h3>24小时全链路服务 <small>24/7 End-to-End</small></h3>
-        <p>中文管家 + 行程系统，全流程可控。</p>
-      </div>
-    </div>
-
-    <!-- 安全与舒适（用原草原动物图） -->
-    <div class="elite-card slide-right">
-      <div class="elite-bg" style="background-image:url('https://images.unsplash.com/photo-1516426122078-c23e76319801');"></div>
-      <div class="elite-content">
-        <h3>安全与舒适 <small>Safety & Comfort</small></h3>
-        <p>在非洲原野环境中，依然保持最高级别的安全与舒适标准。</p>
-      </div>
+  <div class="card left"
+    style="background-image:url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e');">
+    <div class="card-content">
+      <h3>Exclusive Safari</h3>
+      <p>Private African grassland reserves with rich wildlife.</p>
     </div>
   </div>
+
+  <div class="card"
+    style="background-image:url('https://images.unsplash.com/photo-1603988363607-e1e4a66962c9');">
+    <div class="card-content">
+      <h3>Luxury Custom Bus</h3>
+      <p>High-end tailor-made safari buses for ultimate comfort.</p>
+    </div>
+  </div>
+
+  <div class="card left"
+    style="background-image:url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1');">
+    <div class="card-content">
+      <h3>Safety & Comfort</h3>
+      <p>Professional teams ensuring safety and smooth journeys.</p>
+    </div>
+  </div>
+
+  <div class="card"
+    style="background-image:url('https://images.unsplash.com/photo-1508672019048-805c876b67e2');">
+    <div class="card-content">
+      <h3>Licensed Expertise</h3>
+      <p>Fully licensed African travel specialists with experience.</p>
+    </div>
+  </div>
+
 </section>
 
 <script>
-  const cards = document.querySelectorAll('.elite-card');
+  function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("show");
+  }
+
+  function setLang(lang) {
+    document.querySelectorAll('.en').forEach(e => e.style.display = lang === 'en' ? 'block' : 'none');
+    document.querySelectorAll('.cn').forEach(e => e.style.display = lang === 'cn' ? 'block' : 'none');
+  }
+
+  // Scroll animation
+  const cards = document.querySelectorAll('.card');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('show');
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.3 });
 
   cards.forEach(card => observer.observe(card));
 </script>
