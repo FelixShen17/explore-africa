@@ -20,7 +20,6 @@
       color: #fff;
     }
 
-    /* HEADER */
     header {
       position: absolute;
       top: 0;
@@ -66,7 +65,10 @@
     .hero {
       height: 100vh;
       background:
-        linear-gradient(rgba(15,17,21,0.6), rgba(15,17,21,0.9)),
+        linear-gradient(
+          rgba(15,17,21,0.6),
+          rgba(15,17,21,0.9)
+        ),
         url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
       background-size: cover;
       background-position: center;
@@ -107,37 +109,31 @@
       color: #000;
     }
 
-    .cn { display: none; }
+    .cn {
+      display: none;
+    }
 
-    /* ===== ELITE SECTION ===== */
+    /* ========================= */
+    /* ELITE RESOURCES SECTION */
+    /* ========================= */
+
     .elite-section {
       padding: 120px 80px;
       background: #0f1115;
     }
 
     .elite-header {
-      margin-bottom: 80px;
-    }
-
-    .elite-header .dot {
-      width: 10px;
-      height: 10px;
-      background: #c58b3c;
-      border-radius: 50%;
-      display: inline-block;
-      margin-bottom: 20px;
+      margin-bottom: 60px;
     }
 
     .elite-header h2 {
       font-family: "Playfair Display", serif;
-      font-size: 38px;
+      font-size: 36px;
       margin-bottom: 10px;
     }
 
     .elite-header p {
-      font-size: 14px;
       opacity: 0.7;
-      letter-spacing: 1px;
     }
 
     .elite-grid {
@@ -148,19 +144,29 @@
 
     .elite-card {
       position: relative;
-      height: 320px;
+      height: 360px;
+      border-radius: 18px;
       overflow: hidden;
-      border-radius: 6px;
+      transform: translateX(0);
       opacity: 0;
-      transition: all 1s ease;
+      transition: all 0.9s ease;
     }
 
-    .slide-left { transform: translateX(-80px); }
-    .slide-right { transform: translateX(80px); }
-
     .elite-card.show {
-      opacity: 1;
       transform: translateX(0);
+      opacity: 1;
+    }
+
+    .slide-left {
+      transform: translateX(-80px);
+    }
+
+    .slide-right {
+      transform: translateX(80px);
+    }
+
+    .elite-card:hover {
+      transform: scale(1.04);
     }
 
     .elite-bg {
@@ -168,62 +174,63 @@
       inset: 0;
       background-size: cover;
       background-position: center;
-      filter: brightness(0.6);
+      filter: brightness(0.65);
+      z-index: 1;
     }
 
     .elite-content {
       position: relative;
       z-index: 2;
-      padding: 30px;
+      padding: 36px;
     }
 
-    .elite-content .num {
-      font-size: 12px;
+    .elite-num {
+      font-size: 14px;
       opacity: 0.6;
     }
 
     .elite-content h3 {
-      margin: 10px 0;
-      font-size: 20px;
-    }
-
-    .elite-content h3 small {
-      display: block;
-      font-size: 12px;
-      opacity: 0.6;
-      margin-top: 4px;
+      margin: 10px 0 16px;
+      transition: transform 0.4s ease;
     }
 
     .elite-content p {
       font-size: 14px;
-      line-height: 1.7;
-      opacity: 0.85;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.4s ease;
     }
 
-    /* MOBILE */
+    .elite-card:hover h3 {
+      transform: translateY(-6px);
+    }
+
+    .elite-card:hover p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Card backgrounds */
+    .elite-card:nth-child(1) .elite-bg {
+      background-image: url("images/partner-hotel.jpg");
+    }
+
+    .elite-card:nth-child(2) .elite-bg {
+      background-image: url("images/safari-animals.jpg");
+    }
+
+    .elite-card:nth-child(3) .elite-bg {
+      background-image: url("images/service-team.jpg");
+    }
+
+    .elite-card:nth-child(4) .elite-bg {
+      background-image: url("images/luxury-bus.jpg");
+    }
+
+    /* 📱 Mobile */
     @media (max-width: 768px) {
-      header {
-        padding: 20px 30px;
-      }
-
-      nav {
-        display: none;
-        position: absolute;
-        top: 80px;
-        right: 30px;
-        background: #0f1115;
-        padding: 20px;
-        flex-direction: column;
-      }
-
-      nav.show { display: flex; }
-
-      nav a {
-        margin: 10px 0;
-      }
-
-      .menu-toggle {
-        display: block;
+      .elite-grid {
+        grid-template-columns: 1fr;
       }
 
       .hero {
@@ -234,12 +241,32 @@
         font-size: 42px;
       }
 
-      .elite-section {
-        padding: 80px 30px;
+      p {
+        font-size: 16px;
       }
 
-      .elite-grid {
-        grid-template-columns: 1fr;
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        position: absolute;
+        top: 80px;
+        right: 30px;
+        background: #0f1115;
+        padding: 20px;
+        display: none;
+        flex-direction: column;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      nav a {
+        margin: 10px 0;
+        white-space: nowrap;
+        font-size: 12px;
       }
     }
   </style>
@@ -260,14 +287,20 @@
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <h1 class="en">Explore Africa</h1>
     <h1 class="cn">探索非洲</h1>
 
-    <p class="en">Tailor-made journeys across Africa.<br>Nature, culture and unforgettable moments.</p>
-    <p class="cn">为你量身定制非洲之旅，融合自然、文化与独一无二的体验。</p>
+    <p class="en">
+      Tailor-made journeys across Africa.
+      Nature, culture and unforgettable moments.
+    </p>
+
+    <p class="cn">
+      为你量身定制非洲之旅，
+      融合自然、文化与独一无二的体验。
+    </p>
 
     <a href="contact.html" class="cta-btn">CONTACT US</a>
   </div>
@@ -275,85 +308,53 @@
 
 <!-- ELITE RESOURCES -->
 <section class="elite-section">
+  <div class="elite-header">
+    <h2>顶级资源掌控</h2>
+    <p>Elite Resources — Six Exclusive Guarantees</p>
+  </div>
+
   <div class="elite-grid">
-
-  <!-- 01 合作酒店 -->
-  <div class="elite-card slide-left">
-    <div class="elite-bg"></div>
-    <div class="elite-content">
-      <span class="elite-num">01</span>
-      <h3 class="cn">合作酒店</h3>
-      <h3 class="en">Partner Hotels</h3>
-
-      <p class="cn">
-        与 Cresta、Wilderness Safaris、Holiday Inn 等高端营地及酒店集团深度合作，全年房源保障。
-      </p>
-      <p class="en">
-        Deep collaborations with Cresta, Wilderness Safaris, Holiday Inn and other premium lodges, ensuring year-round availability.
-      </p>
-    </div>
-  </div>
-
-    <div class="card left"
-  style="background-image:url('images/safari-animals.jpg');">
-  
-  <div class="card-content">
-
-    <!-- 标题 -->
-<div class="elite-card slide-right">
-    <div class="elite-bg"></div>
-    <div class="elite-content">
-      <span class="elite-num">02</span>
-      <h3 class="cn">独家猎场</h3>
-      <h3 class="en">Private Hunting Grounds</h3>
-
-      <p class="cn">
-        持牌私人猎场，专业猎导陪同，猎物现场处理（附合法认证）。
-      </p>
-      <p class="en">
-        Fully licensed private safari areas with professional guides and on-site wildlife management.
-      </p>
-    </div>
-  </div>
-
-
     <div class="elite-card slide-left">
-      <div class="elite-bg" style="background-image:url('images/safety-comfort.jpg');"></div>
+      <div class="elite-bg"></div>
       <div class="elite-content">
-        <span class="num">03</span>
-       <h3 class="en">24/7 End-to-End Service</h3>
-<h3 class="cn">24小时全链路服务</h3>
-
-<p class="en">
-Seamless support from visa assistance to VIP airport transfers,
-with Mandarin-speaking concierge service.
-</p>
-
-<p class="cn">
-从签证协助到机场 VIP 通道，全流程中文管家式服务，
-实时跟进行程动态。
-</p>
-
+        <span class="elite-num">01</span>
+        <h3 class="cn">合作酒店</h3>
+        <h3 class="en">Partner Hotels</h3>
+        <p class="cn">与顶级非洲营地及酒店集团深度合作，全年房源保障。</p>
+        <p class="en">Deep collaborations with premium lodges ensuring year-round availability.</p>
       </div>
     </div>
 
     <div class="elite-card slide-right">
-      <div class="elite-bg"style="background-image:url('images/luxury-bus.jpg');"></div>
+      <div class="elite-bg"></div>
       <div class="elite-content">
-        <span class="num">04</span>
+        <span class="elite-num">02</span>
+        <h3 class="cn">独家猎场</h3>
+        <h3 class="en">Private Hunting Grounds</h3>
+        <p class="cn">持牌私人猎场，专业猎导陪同，合法合规。</p>
+        <p class="en">Fully licensed private safari areas with professional guides.</p>
+      </div>
+    </div>
+
+    <div class="elite-card slide-left">
+      <div class="elite-bg"></div>
+      <div class="elite-content">
+        <span class="elite-num">03</span>
+        <h3 class="cn">24小时全链路服务</h3>
+        <h3 class="en">24/7 End-to-End Service</h3>
+        <p class="cn">从签证到落地，全程中文管家支持。</p>
+        <p class="en">Seamless end-to-end service with real-time support.</p>
+      </div>
+    </div>
+
+    <div class="elite-card slide-right">
+      <div class="elite-bg"></div>
+      <div class="elite-content">
+        <span class="elite-num">04</span>
+        <h3 class="cn">安全与舒适</h3>
         <h3 class="en">Safety & Comfort</h3>
-<h3 class="cn">安全与舒适</h3>
-
-<p class="en">
-Private fleet with satellite communication, plus medical
-support in partnership with local clinics across Africa.
-</p>
-
-<p class="cn">
-自营车队配备卫星通讯系统，并与当地医疗机构合作，
-全非洲范围紧急医疗保障。
-</p>
-
+        <p class="cn">豪华定制巴士，卫星通讯与医疗保障。</p>
+        <p class="en">Luxury custom vehicles with full safety coverage.</p>
       </div>
     </div>
   </div>
@@ -365,10 +366,15 @@ support in partnership with local clinics across Africa.
   }
 
   function setLang(lang) {
-    document.querySelectorAll('.en').forEach(e => e.style.display = lang === 'en' ? 'block' : 'none');
-    document.querySelectorAll('.cn').forEach(e => e.style.display = lang === 'cn' ? 'block' : 'none');
+    document.querySelectorAll('.en').forEach(e => {
+      e.style.display = lang === 'en' ? 'block' : 'none';
+    });
+    document.querySelectorAll('.cn').forEach(e => {
+      e.style.display = lang === 'cn' ? 'block' : 'none';
+    });
   }
 
+  // slide-in animation
   const cards = document.querySelectorAll('.elite-card');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -376,7 +382,7 @@ support in partnership with local clinics across Africa.
         entry.target.classList.add('show');
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.3 });
 
   cards.forEach(card => observer.observe(card));
 </script>
