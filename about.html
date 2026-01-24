@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us – Explore Africa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #0f1115;
+      color: #ffffff;
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 30px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 13px;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    /* HERO 大图 */
+    .hero {
+      height: 100vh;
+      background:
+        linear-gradient(
+          rgba(15,17,21,0.6),
+          rgba(15,17,21,0.9)
+        ),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 0 80px;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 64px;
+      margin-bottom: 30px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+
+    .section {
+      padding: 100px 80px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 42px;
+      margin-bottom: 24px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.9;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 120px 40px;
+      background: #0b0d11;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 16px 44px;
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 3px;
+      font-size: 12px;
+    }
+
+    .cta a:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    footer {
+      padding: 40px;
+      text-align: center;
+      font-size: 12px;
+      opacity: 0.5;
+    }
+
+    .cn { display: none; }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 20px 30px;
+      }
+
+      .hero {
+        padding: 0 30px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+
+      .section {
+        padding: 70px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">EXPLORE AFRICA.</div>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a onclick="setLang('en')">EN</a>
+    <a onclick="setLang('cn')">中文</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="en">About Us</h1>
+    <h1 class="cn">关于我们</h1>
+
+    <p class="en">
+      We create refined, meaningful journeys across Africa,
+      blending luxury, culture, and nature into unforgettable experiences.
+    </p>
+
+    <p class="cn">
+      我们致力于打造高端、深度且富有灵魂的非洲旅行体验，
+      将自然、人文与舒适完美融合。
+    </p>
+  </div>
+</section>
+
+<!-- STORY -->
+<div class="section">
+  <h2 class="en">Our Story</h2>
+  <h2 class="cn">品牌故事</h2>
+
+  <p class="en">
+    Explore Africa was born from a deep passion for the continent —
+    its landscapes, wildlife, and diverse cultures.
+    Our team has spent years traveling across Africa,
+    building strong local partnerships.
+  </p>
+
+  <p class="cn">
+    Explore Africa 源于我们对非洲大陆的热爱——
+    广袤的自然、野生动物以及丰富多样的文化。
+    团队多年深入非洲各地，与当地建立了稳固的合作关系。
+  </p>
+</div>
+
+<!-- PHILOSOPHY -->
+<div class="section">
+  <h2 class="en">Our Philosophy</h2>
+  <h2 class="cn">我们的理念</h2>
+
+  <p class="en">
+    Travel should be personal, immersive, and respectful.
+    Every journey we design reflects individuality,
+    authenticity, and thoughtful detail.
+  </p>
+
+  <p class="cn">
+    我们相信旅行应当是个性化、沉浸式并尊重当地文化的。
+    每一段旅程都体现独特性与精心设计。
+  </p>
+</div>
+
+<!-- DESTINATIONS -->
+<div class="section">
+  <h2 class="en">Destinations We Love</h2>
+  <h2 class="cn">精选目的地</h2>
+
+  <p class="en">
+    Victoria · Tanzania · South Africa · Namibia · Botswana
+    Each destination offers a unique rhythm and story.
+  </p>
+
+  <p class="cn">
+    维多利亚 · 坦桑尼亚 · 南非 · 纳米比亚 · 博茨瓦纳
+    每一处目的地都拥有独特的自然与文化魅力。
+  </p>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <h2 class="en">Start Your Journey</h2>
+  <h2 class="cn">开启你的非洲之旅</h2>
+
+  <p class="en">Let us design a journey that is uniquely yours.</p>
+  <p class="cn">让我们为你定制一段只属于你的非洲之旅。</p>
+
+  <a href="index.html">CONTACT US</a>
+</div>
+
+<footer>
+  © 2026 Explore Africa. All rights reserved.
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.en').forEach(e => {
+      e.style.display = lang === 'en' ? 'block' : 'none';
+    });
+    document.querySelectorAll('.cn').forEach(e => {
+      e.style.display = lang === 'cn' ? 'block' : 'none';
+    });
+  }
+</script>
+
+</body>
+</html>
