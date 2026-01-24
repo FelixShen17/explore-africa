@@ -148,6 +148,55 @@
 
     .cn { display: none; }
   </style>
+  .contact-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1000px;
+}
+
+.contact-info p {
+  margin-bottom: 16px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: #0f1115;
+  border: 1px solid #333;
+  padding: 14px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-family: inherit;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+.contact-form button {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 14px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .contact-box {
+    grid-template-columns: 1fr;
+  }
+}
+
 </head>
 
 <body>
@@ -204,6 +253,34 @@
       <p class="en">Deserts, mountains, oceans — adventure in style.</p>
       <p class="cn">沙漠、山脉、海岸线，高端而刺激的冒险体验。</p>
     </div>
+  </div>
+</section>
+<section>
+  <h2 class="en">Contact Us</h2>
+  <h2 class="cn">联系我们</h2>
+
+  <div class="contact-box">
+    <div class="contact-info">
+      <p class="en">
+        Ready to plan your journey?<br>
+        Get in touch with our travel specialists.
+      </p>
+      <p class="cn">
+        准备开启您的非洲之旅？<br>
+        欢迎联系我们的旅行顾问。
+      </p>
+
+      <p>Email: <strong>info@exploreafrica.com</strong></p>
+      <p>WhatsApp: <strong>+27 000 000 000</strong></p>
+      <p>Location: Cape Town · Nairobi · Arusha</p>
+    </div>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name / 姓名">
+      <input type="email" placeholder="Email / 邮箱">
+      <textarea placeholder="Your Message / 留言"></textarea>
+      <button type="submit">SEND MESSAGE</button>
+    </form>
   </div>
 </section>
 
