@@ -5,19 +5,15 @@
   <title>Explore Africa – Luxury Safari Tours</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: "Poppins", sans-serif;
-      background-color: #0f1115;
+      background: #0f1115;
       color: #ffffff;
     }
 
@@ -38,22 +34,32 @@
       letter-spacing: 1px;
     }
 
-    nav a {
-      margin-left: 30px;
-      text-decoration: none;
-      color: #ffffff;
-      font-size: 14px;
-      letter-spacing: 1px;
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
     }
 
-    nav a:hover {
-      opacity: 0.7;
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    nav a:hover { opacity: 0.7; }
+
+    .lang-switch {
+      border: 1px solid #fff;
+      padding: 6px 14px;
+      font-size: 12px;
     }
 
     .hero {
       height: 100vh;
       background:
-        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.6)),
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.65)),
         url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80");
       background-size: cover;
       background-position: center;
@@ -62,14 +68,9 @@
       padding: 0 80px;
     }
 
-    .hero-content {
-      max-width: 600px;
-    }
-
     .hero h1 {
       font-family: "Playfair Display", serif;
       font-size: 64px;
-      line-height: 1.1;
       margin-bottom: 20px;
     }
 
@@ -77,6 +78,7 @@
       font-size: 16px;
       line-height: 1.8;
       margin-bottom: 40px;
+      max-width: 600px;
       opacity: 0.9;
     }
 
@@ -88,20 +90,18 @@
       font-size: 14px;
       letter-spacing: 2px;
       cursor: pointer;
-      transition: all 0.3s ease;
     }
 
     .hero button:hover {
-      background: #ffffff;
+      background: #fff;
       color: #000;
     }
 
     section {
       padding: 100px 80px;
-      background-color: #0f1115;
     }
 
-    .section-title {
+    h2 {
       font-family: "Playfair Display", serif;
       font-size: 40px;
       margin-bottom: 40px;
@@ -114,14 +114,9 @@
     }
 
     .card {
-      background-color: #161922;
+      background: #161922;
       padding: 30px;
       border-radius: 6px;
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
     }
 
     .card h3 {
@@ -137,87 +132,91 @@
     }
 
     footer {
-      padding: 40px;
       text-align: center;
-      background-color: #0b0d12;
+      padding: 40px;
       font-size: 13px;
-      opacity: 0.7;
+      opacity: 0.6;
+      background: #0b0d12;
     }
 
     @media (max-width: 768px) {
-      header {
-        padding: 20px 30px;
-      }
-
-      .hero {
-        padding: 0 30px;
-      }
-
-      .hero h1 {
-        font-size: 42px;
-      }
-
-      section {
-        padding: 80px 30px;
-      }
+      header { padding: 20px 30px; }
+      .hero { padding: 0 30px; }
+      .hero h1 { font-size: 42px; }
+      section { padding: 80px 30px; }
     }
+
+    .cn { display: none; }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">EXPLORE AFRICA.</div>
-    <nav>
-      <a href="#">ALL TRIPS</a>
-      <a href="#">DESTINATIONS</a>
-      <a href="#">ABOUT US</a>
-      <a href="#">CONTACT</a>
-    </nav>
-  </header>
+<header>
+  <div class="logo">EXPLORE AFRICA.</div>
+  <nav>
+    <a onclick="setLang('en')">EN</a>
+    <a onclick="setLang('cn')">中文</a>
+  </nav>
+</header>
 
-  <div class="hero">
-    <div class="hero-content">
-      <h1>Explore Africa</h1>
-      <p>
-        Curated luxury safari experiences across Africa.
-        Discover wildlife, landscapes, and cultures with
-        world-class private tours.
-      </p>
-      <button>DISCOVER JOURNEYS</button>
+<div class="hero">
+  <div>
+    <h1 class="en">Explore Africa</h1>
+    <h1 class="cn">寻迹非洲</h1>
+
+    <p class="en">
+      Curated luxury safari experiences across Africa.
+      Discover wildlife, landscapes and cultures with private tours.
+    </p>
+    <p class="cn">
+      我们为您定制高端非洲旅行体验，
+      探索野生动物、壮丽自然与独特文化。
+    </p>
+
+    <button class="en">DISCOVER JOURNEYS</button>
+    <button class="cn">探索旅程</button>
+  </div>
+</div>
+
+<section>
+  <h2 class="en">Our Signature Experiences</h2>
+  <h2 class="cn">我们的核心旅行体验</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3 class="en">Private Safari</h3>
+      <h3 class="cn">私人野奢 Safari</h3>
+      <p class="en">Luxury safaris with expert guides and exclusive lodges.</p>
+      <p class="cn">专业向导带领，入住顶级野奢营地的私人 Safari 体验。</p>
+    </div>
+
+    <div class="card">
+      <h3 class="en">Cultural Journeys</h3>
+      <h3 class="cn">文化深度之旅</h3>
+      <p class="en">Authentic connections with local traditions and history.</p>
+      <p class="cn">深入非洲部落与历史，感受真实而独特的文化。</p>
+    </div>
+
+    <div class="card">
+      <h3 class="en">Adventure Travel</h3>
+      <h3 class="cn">探险旅行</h3>
+      <p class="en">Deserts, mountains, oceans — adventure in style.</p>
+      <p class="cn">沙漠、山脉、海岸线，高端而刺激的冒险体验。</p>
     </div>
   </div>
+</section>
 
-  <section>
-    <h2 class="section-title">Our Signature Experiences</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Private Safari</h3>
-        <p>
-          Tailor-made luxury safaris with expert guides,
-          private lodges, and unforgettable wildlife encounters.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Cultural Journeys</h3>
-        <p>
-          Connect with local traditions, history, and communities
-          through immersive cultural experiences.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Adventure Travel</h3>
-        <p>
-          From deserts to mountains, experience Africa’s most
-          breathtaking adventures in comfort and style.
-        </p>
-      </div>
-    </div>
-  </section>
+<footer>
+  © 2026 Explore Africa. All rights reserved.
+</footer>
 
-  <footer>
-    © 2026 Explore Africa. All rights reserved.
-  </footer>
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.en').forEach(e => e.style.display = lang === 'en' ? 'block' : 'none');
+    document.querySelectorAll('.cn').forEach(e => e.style.display = lang === 'cn' ? 'block' : 'none');
+  }
+</script>
 
 </body>
 </html>
