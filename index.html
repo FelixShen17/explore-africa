@@ -133,13 +133,18 @@
       gap: 40px;
     }
 
+    /* CARD */
     .elite-card {
       position: relative;
       height: 320px;
       overflow: hidden;
       border-radius: 6px;
       opacity: 0;
-      transition: all 1s ease;
+      transform: scale(1);
+      transition:
+        opacity 1s ease,
+        transform 0.6s cubic-bezier(.4,0,.2,1),
+        box-shadow 0.6s ease;
     }
 
     .slide-left { transform: translateX(-80px); }
@@ -147,7 +152,17 @@
 
     .elite-card.show {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateX(0) scale(1);
+    }
+
+    /* HOVER 微动效 */
+    .elite-card:hover {
+      transform: scale(1.035);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.55);
+    }
+
+    .elite-card:hover .elite-bg {
+      transform: scale(1.08);
     }
 
     .elite-bg {
@@ -156,6 +171,7 @@
       background-size: cover;
       background-position: center;
       filter: brightness(0.6);
+      transition: transform 1.2s ease;
     }
 
     .elite-content {
@@ -214,6 +230,12 @@
       .elite-section { padding: 80px 30px; }
 
       .elite-grid { grid-template-columns: 1fr; }
+
+      /* 移动端取消 hover 放大，防止抖动 */
+      .elite-card:hover {
+        transform: none;
+        box-shadow: none;
+      }
     }
   </style>
 </head>
@@ -233,7 +255,6 @@
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <h1 class="en">Explore Africa</h1>
@@ -246,7 +267,6 @@
   </div>
 </section>
 
-<!-- ELITE RESOURCES -->
 <section class="elite-section">
   <div class="elite-header">
     <span class="dot"></span>
@@ -255,7 +275,6 @@
   </div>
 
   <div class="elite-grid">
-    <!-- 酒店 -->
     <div class="elite-card slide-left">
       <div class="elite-bg" style="background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb');"></div>
       <div class="elite-content">
@@ -265,7 +284,6 @@
       </div>
     </div>
 
-    <!-- 狩猎 / 草原 -->
     <div class="elite-card slide-right">
       <div class="elite-bg" style="background-image:url('https://images.unsplash.com/photo-1516426122078-c23e76319801');"></div>
       <div class="elite-content">
@@ -275,7 +293,6 @@
       </div>
     </div>
 
-    <!-- 服务 -->
     <div class="elite-card slide-left">
       <div class="elite-bg" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d');"></div>
       <div class="elite-content">
@@ -285,7 +302,6 @@
       </div>
     </div>
 
-    <!-- 大巴车 -->
     <div class="elite-card slide-right">
       <div class="elite-bg" style="background-image:url('https://images.unsplash.com/photo-1617093727343-374698b1b08d');"></div>
       <div class="elite-content">
