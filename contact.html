@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact – Explore Africa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #0f1115;
+      color: #fff;
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 30px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+    }
+
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 13px;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+
+    nav a:hover { opacity: 0.7; }
+
+    .hero {
+      height: 100vh;
+      background:
+        linear-gradient(
+          rgba(15,17,21,0.7),
+          rgba(15,17,21,0.9)
+        ),
+        url("https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 0 80px;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 64px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.9;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .contact-box {
+      margin-top: 30px;
+    }
+
+    .contact-box a {
+      display: inline-block;
+      margin-right: 20px;
+      margin-top: 10px;
+      padding: 14px 36px;
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .contact-box a:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    footer {
+      padding: 40px;
+      text-align: center;
+      font-size: 12px;
+      opacity: 0.5;
+    }
+
+    .cn { display: none; }
+
+    @media (max-width: 768px) {
+      header { padding: 20px 30px; }
+      .hero { padding: 0 30px; }
+      h1 { font-size: 42px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">EXPLORE AFRICA.</div>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a onclick="setLang('en')">EN</a>
+    <a onclick="setLang('cn')">中文</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="en">Contact Us</h1>
+    <h1 class="cn">联系我们</h1>
+
+    <p class="en">
+      Let us help you design a journey that is uniquely yours.
+      Reach out to us anytime.
+    </p>
+
+    <p class="cn">
+      欢迎联系我们，
+      我们将为你定制专属的非洲旅行体验。
+    </p>
+
+    <div class="contact-box">
+      <a href="https://wa.me/2630772677777" target="_blank">WHATSAPP</a>
+      <a href="mailto:info@exploreafrica.com">EMAIL US</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Explore Africa. All rights reserved.
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.en').forEach(e => {
+      e.style.display = lang === 'en' ? 'block' : 'none';
+    });
+    document.querySelectorAll('.cn').forEach(e => {
+      e.style.display = lang === 'cn' ? 'block' : 'none';
+    });
+  }
+</script>
+
+</body>
+</html>
