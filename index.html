@@ -9,6 +9,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
+    .contact-actions {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background: #25D366;
+  border-color: #25D366;
+  color: #000;
+}
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     .contact-box {
   display: grid;
@@ -271,17 +294,25 @@
         欢迎联系我们的旅行顾问。
       </p>
 
-      <p>Email: <strong>info@exploreafrica.com</strong></p>
-      <p>WhatsApp: <strong>+27 000 000 000</strong></p>
-      <p>Location: Cape Town · Nairobi · Arusha</p>
+      <p>Email: <strong>公司邮箱@exploreafrica.com</strong></p>
+      <p>WhatsApp: <strong>+263（0）772677777</strong></p>
+      <p>Location: Zimbabwe｜Harare </p>
     </div>
 
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name / 姓名">
-      <input type="email" placeholder="Email / 邮箱">
-      <textarea placeholder="Your Message / 留言"></textarea>
-      <button type="submit">SEND MESSAGE</button>
-    </form>
+   <div class="contact-actions">
+  <a class="whatsapp-btn"
+     href="https://wa.me/2630772677777?text=Hello%20I%20am%20interested%20in%20an%20Africa%20trip"
+     target="_blank">
+     WhatsApp Us
+  </a>
+
+  <a class="whatsapp-btn cn"
+     href="https://wa.me/2630772677777?text=你好，我想咨询非洲旅行"
+     target="_blank">
+     WhatsApp 联系我们
+  </a>
+</div>
+
   </div>
 </section>
 
