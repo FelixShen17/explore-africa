@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <meta charset="UTF-8">
   <title>Explore Africa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,40 +22,54 @@
       color: #fff;
     }
 
-    header {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      padding: 30px 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 10;
-    }
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 30px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
 
     .logo {
-      font-family: "Playfair Display", serif;
-      font-size: 22px;
-      letter-spacing: 1px;
-    }
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
 
     nav {
       display: flex;
       align-items: center;
     }
+nav a {
+  position: relative;
+  margin-left: 30px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  padding-bottom: 6px;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  background: rgba(255,255,255,0.7);
+  transition: width 0.35s ease;
+}
 
-    nav a {
-      margin-left: 30px;
-      text-decoration: none;
-      color: #fff;
-      font-size: 13px;
-      letter-spacing: 2px;
-      cursor: pointer;
-    }
 
-    nav a:hover {
-      opacity: 0.7;
-    }
+  nav a:hover::after {
+  width: 100%;
+}
 
     .menu-toggle {
       display: none;
@@ -61,30 +77,60 @@
       cursor: pointer;
     }
 
-    /* HERO */
-  .hero {
+/* ========================= */
+/* HERO SECTION */
+/* ========================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
   height: 100vh;
-  background:
-    linear-gradient(
-      rgba(15, 17, 21, 0.55),
-      rgba(15, 17, 21, 0.9)
-    ),
-    url("cover.jpg") center / cover no-repeat;
   display: flex;
   align-items: center;
   padding: 0 80px;
+
+  /* 滚动淡出（整体） */
+  animation: hero-fade linear forwards;
+  animation-timeline: scroll();
+  animation-range: 0vh 70vh;
 }
 
-   .hero-content {
+/* 背景视差层 */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      rgba(15, 17, 21, 0.55),
+      rgba(15, 17, 21, 0.92)
+    ),
+    url("cover.jpg") center center / cover no-repeat;
+  transform: scale(1.1);
+  will-change: transform;
+  z-index: 0;
+}
+
+/* Hero 文案层 */
+.hero-content {
+  position: relative;
+  z-index: 1;
   max-width: 700px;
-  text-shadow: 0 6px 20px rgba(0,0,0,0.45);
+  margin-top: 80px;
+  text-shadow: 0 8px 30px rgba(0,0,0,0.45);
+
+  /* 文字滚动淡出 */
+  animation: hero-text linear forwards;
+  animation-timeline: scroll();
+  animation-range: 0vh 60vh;
 }
 
-   h1 {
+/* 主标题 */
+.hero h1 {
   font-family: "Playfair Display", serif;
   font-size: 64px;
-  margin-bottom: 24px;
   line-height: 1.1;
+  margin-bottom: 22px;
 }
 
     p {
@@ -112,6 +158,91 @@
     .cn {
       display: none;
     }
+.company-profile {
+  position: relative;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.75) 0%,
+      rgba(0, 0, 0, 0.4) 20%,
+      rgba(90, 55, 32, 0.65) 55%,
+      #6f4326 100%
+    );
+
+  color: #ffffff;
+
+  padding: 200px 80px 140px;
+  margin-top: 120px;
+
+  overflow: hidden;
+}
+
+
+
+  background: linear-gradient(
+    to bottom,
+    #c97a3d 0%,
+    #b96f35 100%
+  );
+}
+
+  background: #c97a3d;
+  color: #fff;
+  padding: 140px 80px;
+  font-family: "Inter", sans-serif;
+}
+
+.cp-header {
+  text-align: center;
+  margin-bottom: 90px;
+}
+
+.cp-title {
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+.cp-subtitle {
+  font-size: 15px;
+  letter-spacing: 6px;
+  opacity: 0.7;
+}
+.cp-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cp-tagline {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.cp-tagline-en {
+  font-size: 14px;
+  opacity: 0.75;
+  margin-bottom: 50px;
+}
+
+.cp-text {
+  font-size: 15px;
+  line-height: 1.9;
+  opacity: 0.85;
+  margin-bottom: 18px;
+}
+
+.cp-text-en {
+  font-size: 14px;
+  line-height: 1.9;
+  opacity: 0.75;
+  margin-bottom: 22px;
+}
+
+
 
     /* ========================= */
     /* ELITE RESOURCES SECTION */
@@ -226,49 +357,119 @@
     .elite-card:nth-child(4) .elite-bg {
       background-image: url("images/luxury-bus.jpg");
     }
+<section class="company-profile">
 
-    /* 📱 Mobile */
-    @media (max-width: 768px) {
-      .elite-grid {
-        grid-template-columns: 1fr;
-      }
+  <!-- 顶部分割线 -->
+  <div class="cp-divider"></div>
 
-      .hero {
-        padding: 0 30px;
-      }
+  <!-- 标题区 -->
+  <div class="cp-header">
+    <h2 class="cp-title">Company profile</h2>
+    <span class="cp-subtitle">公司概况</span>
+  </div>
 
-      h1 {
-        font-size: 42px;
-      }
+  <!-- 内容区 -->
+  <div class="cp-content">
 
-      p {
-        font-size: 16px;
-      }
+    <p class="cp-tagline">
+      寻迹非洲 · 深耕南部非洲的旅行专家
+    </p>
 
-      .menu-toggle {
-        display: block;
-      }
+    <p class="cp-tagline-en">
+      Explore Africa – The Pioneering Travel Specialist in Southern Africa
+    </p>
 
-      nav {
-        position: absolute;
-        top: 80px;
-        right: 30px;
-        background: #0f1115;
-        padding: 20px;
-        display: none;
-        flex-direction: column;
-      }
+    <p class="cp-text">
+      公司定位：总部位于津巴布韦哈拉雷，专注为中国游客提供高端定制旅行服务的精品地接社。
+    </p>
 
-      nav.show {
-        display: flex;
-      }
+    <p class="cp-text">
+      成立时间：2024年
+    </p>
 
-      nav a {
-        margin: 10px 0;
-        white-space: nowrap;
-        font-size: 12px;
-      }
-    }
+    <p class="cp-text">
+      服务理念：以“深度探险 + 文化融合”为核心，打造安全、独特、高性价比的非洲体验。
+    </p>
+
+    <p class="cp-text-en">
+      Positioning: Headquartered in Harare, Zimbabwe, we are a premier inbound travel agency dedicated to providing high-end customized travel experiences for Chinese tourists.
+    </p>
+
+    <p class="cp-text-en">
+      Established: 2024<br>
+      Philosophy: Rooted in “adventure meets culture”, we deliver safe, unique, and high-value African experiences.
+    </p>
+
+  </div>
+
+</section>
+
+@keyframes hero-fade {
+  from { opacity: 1; }
+  to { opacity: 0.15; }
+}
+
+@keyframes hero-text {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+
+
+  @media (max-width: 768px) {
+
+  .hero {
+    padding: 0 30px;
+    animation: none;
+  }
+
+  .hero::before {
+    background-position: center bottom;
+  }
+
+  .hero-content {
+    margin-top: 60px;
+    animation: none;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    background: #0f1115;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  nav a {
+    margin: 10px 0;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+}
+
   </style>
 </head>
 
@@ -357,6 +558,83 @@
         <p class="en">Luxury custom vehicles with full safety coverage.</p>
       </div>
     </div>
+  </div>
+<section class="company-profile">
+  <div class="cp-inner">
+
+    <h2 class="cp-title">
+      Company profile
+
+
+      <span class="cp-script">Company profile</span>
+    </h2>
+    <div class="cp-sub">公司概况</div>
+
+    <div class="cp-dot"></div>
+
+    <h3 class="cp-headline">寻迹非洲-深耕南部非洲的旅行专家</h3>
+    <p class="cp-headline-en">
+      Explore Africa – The Pioneering Travel Specialist in Southern Africa
+    </p>
+
+    <div class="cp-text">
+      <p>公司定位：总部位于津巴布韦哈拉雷，专注为中国游客提供高端定制旅行服务的精品地接社。</p>
+      <p>成立时间：2024年</p>
+      <p>服务理念：以“深度探险+文化融合”为核心，打造安全、独特、高性价比的非洲体验。</p>
+    </div>
+
+    <div class="cp-text en">
+      <p>
+        Positioning: Headquartered in Harare, Zimbabwe, we are a premier inbound travel agency dedicated to providing high-end customized travel experiences for Chinese tourists.
+      </p>
+      <p>Established: 2024</p>
+      <p>
+        Philosophy: Rooted in "adventure meets culture," we deliver safe, unique, and high-value African experiences.
+      </p>
+    </div>
+
+    <div class="cp-columns">
+      <div class="cp-col">
+        <div class="cp-icon"></div>
+        <h4>里程碑</h4>
+        <p class="en-title">Milestones</p>
+        <p>
+          合作客户包括光大国旅、友谊国旅、永信假期旅游、聚风旅、游集团、携程旅行等国内头部旅行社
+        </p>
+        <p class="en">
+          Trusted by leading Chinese travel agencies, including China Guangda Travel, Friendship Tours, Yongxin Holidays, Ctrip Travel, and Jufeng Tourism Group
+        </p>
+      </div>
+
+      <div class="cp-col">
+        <div class="cp-icon"></div>
+        <h4>全新车队</h4>
+        <p class="en-title">Brand new team</p>
+        <p>2025年升级全新车队，引入12座空调巴士</p>
+        <p class="en">
+          Upgraded fleet in 2025 with two brand-new 12-seater air-conditioned coaches
+        </p>
+      </div>
+    </div>
+
+    <div class="cp-satisfaction">
+      我们的好评率，100% <span>With a 100% satisfaction rate</span>
+    </div>
+
+    <div class="cp-logos">
+      <img src="logo1.png" alt="">
+      <img src="logo2.png" alt="">
+      <img src="logo3.png" alt="">
+      <img src="logo4.png" alt="">
+      <img src="logo5.png" alt="">
+    </div>
+
+    <div class="cp-gallery">
+      <img src="bus.jpg" alt="">
+      <img src="car1.jpg" alt="">
+      <img src="car2.jpg" alt="">
+    </div>
+
   </div>
 </section>
 
