@@ -541,6 +541,23 @@ nav a::after {
 /* ========================= */
 
 @media (max-width: 768px) {
+@media (max-width: 768px) {
+
+  .cp-main-card {
+    padding: 36px 26px;
+    margin-bottom: 70px;
+  }
+
+  .cp-cards {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .cp-card {
+    padding: 32px 26px;
+  }
+
+}
 
   .elite-section {
     padding: 100px 24px;
@@ -574,6 +591,50 @@ nav a::after {
     opacity: 1;
     transform: none;
   }
+}
+.cp-main-card {
+  max-width: 900px;
+  margin: 0 auto 100px;
+  padding: 64px 70px;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+  border-radius: 26px;
+
+  text-align: center;
+  line-height: 1.9;
+
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease;
+}
+.cp-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cp-card {
+  background: rgba(255,255,255,0.045);
+  backdrop-filter: blur(6px);
+  border-radius: 22px;
+  padding: 46px 40px;
+
+  text-align: center;
+  line-height: 1.8;
+
+  opacity: 0;
+  transition: all 0.9s ease;
+}
+.slide-left { transform: translateX(-80px); }
+.slide-right { transform: translateX(80px); }
+.slide-up { transform: translateY(60px); }
+
+.show {
+  opacity: 1;
+  transform: translate(0);
 }
 
 
@@ -678,6 +739,7 @@ nav a::after {
     <div class="cp-sub">公司概况</div>
 
     <div class="cp-dot"></div>
+    <div class="cp-main-card slide-up">
 
     <h3 class="cp-headline">寻迹非洲-深耕南部非洲的旅行专家</h3>
     <p class="cp-headline-en">
@@ -700,29 +762,27 @@ nav a::after {
       </p>
     </div>
 
-    <div class="cp-columns">
-      <div class="cp-col">
-        <div class="cp-icon"></div>
-        <h4>里程碑</h4>
-        <p class="en-title">Milestones</p>
-        <p>
-          合作客户包括光大国旅、友谊国旅、永信假期旅游、聚风旅游集团、携程旅行等国内头部旅行社
-        </p>
-        <p class="en">
-          Trusted by leading Chinese travel agencies, including China Guangda Travel, Friendship Tours, Yongxin Holidays, Ctrip Travel, and Jufeng Tourism Group
-        </p>
-      </div>
+    <div class="cp-cards">
 
-      <div class="cp-col">
-        <div class="cp-icon"></div>
-        <h4>全新车队</h4>
-        <p class="en-title">Brand new team</p>
-        <p>2025年升级全新车队，引入12座空调巴士</p>
-        <p class="en">
-          Upgraded fleet in 2025 with two brand-new 12-seater air-conditioned coaches
-        </p>
-      </div>
-    </div>
+  <div class="cp-card slide-left">
+    <h4>里程碑</h4>
+    <p class="en-title">Milestones</p>
+    <p>合作客户包括光大国旅、友谊国旅、永信假期旅游、聚风旅游集团、携程旅行等国内头部旅行社</p>
+    <p class="en">
+      Trusted by leading Chinese travel agencies, including China Guangda Travel, Friendship Tours, Yongxin Holidays, Ctrip Travel, and Jufeng Tourism Group
+    </p>
+  </div>
+
+  <div class="cp-card slide-right">
+    <h4>全新车队</h4>
+    <p class="en-title">Brand new team</p>
+    <p>2025年升级全新车队，引入12座空调巴士</p>
+    <p class="en">
+      Upgraded fleet in 2025 with two brand-new 12-seater air-conditioned coaches
+    </p>
+  </div>
+
+</div>
 
     <div class="cp-satisfaction">
       我们的好评率，100% <span>With a 100% satisfaction rate</span>
@@ -760,7 +820,10 @@ nav a::after {
   }
 
   // slide-in animation
-  const cards = document.querySelectorAll('.elite-card');
+ const cards = document.querySelectorAll(
+  '.elite-card, .cp-card, .cp-main-card'
+);
+
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
