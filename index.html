@@ -715,6 +715,55 @@ nav a::after {
 .show {
   opacity: 1;
   transform: translate(0);
+  /* ========================= */
+/* INDEX – MOBILE CARD FIX */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  /* index 页面底部卡片容器 */
+  .cp-cards {
+    grid-template-columns: 1fr;   /* 强制一列 */
+    gap: 22px;
+    padding: 0 4px;
+  }
+
+  /* 单个卡片 */
+  .cp-card {
+    width: 100%;
+    padding: 24px 22px;
+    border-radius: 18px;
+  }
+
+  /* 标题 */
+  .cp-card h4 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  /* 英文副标题 */
+  .cp-card .en-title {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    opacity: 0.6;
+  }
+
+  /* 中文正文 */
+  .cp-card p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  /* 英文正文 */
+  .cp-card p.en {
+    font-size: 12px;
+    line-height: 1.55;
+    opacity: 0.65;
+  }
+
+}
+
 }
 
 
