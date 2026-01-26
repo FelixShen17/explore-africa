@@ -486,6 +486,52 @@ nav a::after {
       #5a351f 100%
     );
   }
+@media (max-width: 768px) {
+
+  /* 🔥 关键：强制卡片改为单列 */
+  .cp-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* 卡片本体 */
+  .cp-col {
+    width: 100%;
+    padding: 22px 20px;
+    border-radius: 18px;
+  }
+
+  /* 中文标题 */
+  .cp-col h4 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  /* 英文标题 */
+  .cp-col .en-title {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    opacity: 0.6;
+    margin-bottom: 10px;
+  }
+
+  /* 正文 */
+  .cp-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  /* 英文正文 */
+  .cp-col p.en {
+    font-size: 12px;
+    line-height: 1.55;
+    opacity: 0.65;
+    word-break: normal;
+    white-space: normal;
+  }
+}
 
   /* 标题区 */
   .cp-header {
