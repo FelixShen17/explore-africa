@@ -245,6 +245,99 @@ nav a{margin:10px 0}
 .fade-up {
   animation: fadeUp 1s ease-out both;
 }
+.about-hero-content {
+  position: relative;
+}
+
+.about-ghost {
+  position: absolute;
+  top: -40px;
+  left: 0;
+
+  font-size: 140px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  color: rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+  user-select: none;
+}
+
+.about-hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  padding: 160px 80px 120px;
+  background: radial-gradient(
+    circle at 20% 20%,
+    rgba(255,170,90,0.08),
+    #0f1115 60%
+  );
+}
+.about-hero-content {
+  position: relative;
+  max-width: 900px;
+}
+.about-ghost {
+  position: absolute;
+  top: -60px;
+  left: 0;
+
+  font-family: "Playfair Display", serif;
+  font-size: 160px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  color: rgba(255, 255, 255, 0.035);
+
+  pointer-events: none;
+  user-select: none;
+}
+.about-hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 64px;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+.about-hero h1 span {
+  color: rgba(255, 200, 140, 0.85);
+}
+.about-hero p {
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  opacity: 0.75;
+}
+.about-divider {
+  width: 56px;
+  height: 1px;
+  margin-top: 28px;
+
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0.6),
+    rgba(255,255,255,0)
+  );
+}
+@media (max-width: 768px) {
+
+  .about-hero {
+    padding: 120px 30px 80px;
+  }
+
+  .about-ghost {
+    font-size: 88px;
+    top: -30px;
+  }
+
+  .about-hero h1 {
+    font-size: 38px;
+  }
+
+  .about-hero p {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+}
 
 
 </style>
@@ -269,15 +362,27 @@ nav a{margin:10px 0}
 
 <section class="about-hero">
   <div class="about-hero-content">
-    <h1 class="en">About Explore Africa</h1>
-<h1 class="cn">关于 Explore Africa</h1>
 
-<p class="en">Who we are · Why we do it · How we travel Africa</p>
-<p class="cn">我们是谁 · 为什么这样做 · 如何探索非洲</p>
+    <!-- 幽灵大字 -->
+    <div class="about-ghost">ABOUT</div>
+
+    <!-- 主标题 -->
+    <h1 class="cn">
+      关于 <span>Explore Africa</span>
+    </h1>
+    <h1 class="en">
+      About <span>Explore Africa</span>
+    </h1>
+
+    <!-- 副标题 -->
+    <p class="cn">我们是谁 · 为什么这样做 · 如何探索非洲</p>
+    <p class="en">Who we are · Why we do it · How we travel Africa</p>
+
+    <!-- 装饰线 -->
+    <div class="about-divider"></div>
+
   </div>
 </section>
-
-<section class="company-profile">
   <div class="cp-inner">
 
     <h2 class="cp-title">
