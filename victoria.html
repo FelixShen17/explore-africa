@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Victoria Falls | 维多利亚瀑布</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:Poppins,sans-serif;background:#0f1115;color:#fff;}
+
+    header{
+      position:fixed;top:0;left:0;width:100%;
+      padding:22px 60px;
+      display:flex;justify-content:space-between;align-items:center;
+      z-index:10;
+    }
+    .logo{font-family:"Playfair Display";font-size:22px;}
+    nav a{margin-left:26px;text-decoration:none;color:#fff;font-size:13px;letter-spacing:2px;}
+
+    .hero{
+      height:100vh;
+      background:url("https://images.unsplash.com/photo-1502082553048-f009c37129b9") center/cover no-repeat;
+      display:flex;align-items:center;padding:0 80px;position:relative;
+    }
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.75),rgba(0,0,0,.25));}
+    .hero-content{position:relative;max-width:520px;}
+    .hero h1{font-family:"Playfair Display";font-size:52px;margin-bottom:16px;}
+
+    section{padding:90px 80px;}
+    h2{font-family:"Playfair Display";font-size:36px;margin-bottom:40px;}
+
+    .card-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:28px;
+    }
+    .card{
+      background:#151820;
+      border-radius:18px;
+      padding:26px;
+      transition:.4s;
+    }
+    .card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 0 0 1px rgba(255,165,0,.6),
+                 0 20px 40px rgba(255,165,0,.25);
+    }
+
+    footer{text-align:center;padding:30px;font-size:12px;opacity:.5;}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">EXPLORE AFRICA.</div>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="destination.html">DESTINATION</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-content">
+    <h1>Victoria Falls<br>维多利亚瀑布</h1>
+    <p>
+      One of the world’s greatest waterfalls.<br>
+      世界三大瀑布之一。
+    </p>
+  </div>
+</div>
+
+<section>
+  <h2>Experiences · 精选体验</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Devil’s Pool<br>魔鬼池</h3>
+      <p>Swim at the edge of the falls.<br>瀑布边缘的极限体验。</p>
+    </div>
+    <div class="card">
+      <h3>Zambezi Cruise<br>赞比西河游船</h3>
+      <p>Sunset and wildlife views.<br>日落与野生动物。</p>
+    </div>
+    <div class="card">
+      <h3>Helicopter Flight<br>直升机观瀑</h3>
+      <p>Best aerial views.<br>最佳空中视角。</p>
+    </div>
+  </div>
+</section>
+
+<footer>© Explore Africa · Victoria Falls</footer>
+
+</body>
+</html>

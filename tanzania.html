@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Tanzania | 坦桑尼亚</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:Poppins,sans-serif;background:#0f1115;color:#fff;}
+
+    header{
+      position:fixed;top:0;left:0;width:100%;
+      padding:22px 60px;
+      display:flex;justify-content:space-between;align-items:center;
+      z-index:10;
+    }
+    .logo{font-family:"Playfair Display";font-size:22px;}
+    nav a{margin-left:26px;text-decoration:none;color:#fff;font-size:13px;letter-spacing:2px;}
+
+    .hero{
+      height:100vh;
+      background:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee") center/cover no-repeat;
+      display:flex;align-items:center;padding:0 80px;position:relative;
+    }
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.75),rgba(0,0,0,.25));}
+    .hero-content{position:relative;max-width:520px;}
+    .hero h1{font-family:"Playfair Display";font-size:52px;margin-bottom:16px;}
+
+    section{padding:90px 80px;}
+    h2{font-family:"Playfair Display";font-size:36px;margin-bottom:40px;}
+
+    .card-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:28px;
+    }
+    .card{
+      background:#151820;
+      border-radius:18px;
+      padding:26px;
+      transition:.4s;
+    }
+    .card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 0 0 1px rgba(255,165,0,.6),
+                 0 20px 40px rgba(255,165,0,.25);
+    }
+
+    footer{text-align:center;padding:30px;font-size:12px;opacity:.5;}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">EXPLORE AFRICA.</div>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="destination.html">DESTINATION</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-content">
+    <h1>Tanzania<br>坦桑尼亚</h1>
+    <p>
+      Classic safari and natural wonders.<br>
+      非洲最经典的野生动物与自然奇迹。
+    </p>
+  </div>
+</div>
+
+<section>
+  <h2>Experiences · 精选体验</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Serengeti<br>塞伦盖蒂</h3>
+      <p>Great Migration safari.<br>世界级动物大迁徙。</p>
+    </div>
+    <div class="card">
+      <h3>Mount Kilimanjaro<br>乞力马扎罗山</h3>
+      <p>Africa’s highest peak.<br>非洲最高峰。</p>
+    </div>
+    <div class="card">
+      <h3>Ngorongoro Crater<br>恩戈罗恩戈罗火山口</h3>
+      <p>Unique wildlife ecosystem.<br>独特生态系统。</p>
+    </div>
+  </div>
+</section>
+
+<footer>© Explore Africa · Tanzania</footer>
+
+</body>
+</html>
