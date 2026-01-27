@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Destinations – Explore Africa</title>
+  <title>Destinations | Explore Africa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
@@ -16,15 +17,17 @@
 
     body {
       font-family: "Poppins", sans-serif;
-      background: #0f1115;
       color: #fff;
+      background: #0f1115;
     }
+
+    /* ================= HEADER ================= */
 
     header {
       position: absolute;
       top: 0;
       width: 100%;
-      padding: 30px 60px;
+      padding: 28px 60px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -33,26 +36,33 @@
 
     .logo {
       font-family: "Playfair Display", serif;
-      font-size: 22px;
-      letter-spacing: 1px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
+      font-size: 20px;
+      letter-spacing: 3px;
     }
 
     nav a {
-      margin-left: 30px;
-      text-decoration: none;
-      color: #fff;
+      margin-left: 28px;
       font-size: 13px;
       letter-spacing: 2px;
+      color: #fff;
+      text-decoration: none;
       cursor: pointer;
+      position: relative;
     }
 
-    nav a:hover {
-      opacity: 0.7;
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0%;
+      height: 1px;
+      background: rgba(255,255,255,0.6);
+      transition: width .3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     .menu-toggle {
@@ -61,82 +71,105 @@
       cursor: pointer;
     }
 
-    /* HERO */
+    /* ================= HERO ================= */
+
     .hero {
-      height: 100vh;
+      min-height: 100vh;
+      padding: 160px 80px 120px;
       background:
         linear-gradient(
-          rgba(15,17,21,0.6),
-          rgba(15,17,21,0.9)
+          to bottom,
+          rgba(0,0,0,0.55),
+          rgba(15,17,21,0.85),
+          #0f1115
         ),
-        url("https://images.unsplash.com/photo-1547471080-7cc2caa01a7e");
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      padding: 0 80px;
+        url("images/destination-bg.jpg") center / cover no-repeat;
     }
 
-    .hero-content {
-      max-width: 700px;
+    .hero-header {
+      max-width: 900px;
+      margin-bottom: 80px;
     }
 
-    h1 {
+    .hero-header h1 {
       font-family: "Playfair Display", serif;
-      font-size: 64px;
-      margin-bottom: 30px;
+      font-size: 56px;
+      margin-bottom: 18px;
     }
 
-    p {
-      font-size: 18px;
-      line-height: 1.9;
-      opacity: 0.9;
+    .hero-header .en {
+      font-size: 16px;
+      letter-spacing: 3px;
+      opacity: 0.7;
     }
 
-    /* DESTINATION LIST */
-    .section {
-      padding: 100px 80px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 42px;
-      margin-bottom: 40px;
-    }
+    /* ================= DESTINATION GRID ================= */
 
     .dest-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .dest-card {
-      background: #0b0d11;
-      padding: 30px;
-      border: 1px solid rgba(255,255,255,0.05);
+      position: relative;
+      height: 340px;
+      border-radius: 22px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(6px);
+
+      opacity: 0;
+      transition: all .9s ease;
     }
 
-    .dest-card h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 24px;
-      margin-bottom: 15px;
+    .slide-left { transform: translateX(-80px); }
+    .slide-right { transform: translateX(80px); }
+
+    .dest-card.show {
+      opacity: 1;
+      transform: translate(0);
     }
 
-    .dest-card p {
+    .dest-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(.65);
+    }
+
+    .dest-content {
+      position: relative;
+      z-index: 2;
+      padding: 32px;
+    }
+
+    .dest-content h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .dest-content p {
       font-size: 14px;
-      line-height: 1.8;
+      line-height: 1.7;
+      opacity: 0.85;
     }
 
-    .cn {
-      display: none;
+    .dest-content .en {
+      font-size: 13px;
+      opacity: 0.6;
+      margin-top: 8px;
     }
 
-    /* Mobile */
+    /* ================= MOBILE ================= */
+
     @media (max-width: 768px) {
+
       header {
-        padding: 20px 30px;
+        padding: 24px;
       }
 
       .menu-toggle {
@@ -146,32 +179,43 @@
       nav {
         position: absolute;
         top: 80px;
-        right: 30px;
+        right: 24px;
         background: #0f1115;
         padding: 20px;
         display: none;
         flex-direction: column;
       }
 
-      nav a {
-        margin: 10px 0;
-      }
-
       nav.show {
         display: flex;
       }
 
-      .hero {
-        padding: 0 30px;
+      nav a {
+        margin: 10px 0;
       }
 
-      h1 {
+      .hero {
+        padding: 140px 24px 100px;
+      }
+
+      .hero-header h1 {
         font-size: 42px;
       }
 
-      .section {
-        padding: 70px 30px;
+      .dest-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
       }
+
+      .dest-card {
+        height: 300px;
+        transform: translateY(40px);
+      }
+
+      .dest-card.show {
+        transform: translateY(0);
+      }
+
     }
   </style>
 </head>
@@ -180,9 +224,7 @@
 
 <header>
   <div class="logo">EXPLORE AFRICA.</div>
-
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
   <nav id="nav-menu">
     <a href="index.html">HOME</a>
     <a href="about.html">ABOUT</a>
@@ -194,58 +236,66 @@
 </header>
 
 <section class="hero">
-  <div class="hero-content">
-    <h1 class="en">Destinations</h1>
-    <h1 class="cn">目的地</h1>
 
-    <p class="en">
-      Discover Africa’s most iconic landscapes and cultures,
-      carefully curated for extraordinary journeys.
-    </p>
-
-    <p class="cn">
-      探索非洲最具代表性的自然景观与文化，
-      每一处都值得深入体验。
-    </p>
+  <div class="hero-header">
+    <h1 class="cn">精选目的地</h1>
+    <h1 class="en">Our Featured Destinations</h1>
   </div>
-</section>
-
-<div class="section">
-  <h2 class="en">Our Featured Destinations</h2>
-  <h2 class="cn">精选目的地</h2>
 
   <div class="dest-grid">
-    <div class="dest-card">
-      <h3>Tanzania</h3>
-      <p class="en">Classic safari, Mount Kilimanjaro，great migration, vast savannahs.</p>
-      <p class="cn">经典 Safari，乞力马扎罗山，动物大迁徙，辽阔草原。</p>
+
+    <div class="dest-card slide-left">
+      <div class="dest-bg" style="background-image:url('images/tanzania.jpg')"></div>
+      <div class="dest-content">
+        <h3 class="cn">坦桑尼亚</h3>
+        <h3 class="en">Tanzania</h3>
+        <p class="cn">经典野生动物游，乞力马扎罗山，动物大迁徙，辽阔草原。</p>
+        <p class="en">Classic safari, Mount Kilimanjaro, great migration, vast savannahs.</p>
+      </div>
     </div>
 
-    <div class="dest-card">
-      <h3>Victoria</h3>
-      <p class="en"> Victoria Fall .</p>
-      <p class="cn">维多利亚瀑布。</p>
+    <div class="dest-card slide-right">
+      <div class="dest-bg" style="background-image:url('images/victoria.jpg')"></div>
+      <div class="dest-content">
+        <h3 class="cn">维多利亚瀑布</h3>
+        <h3 class="en">Victoria Falls</h3>
+        <p class="cn">世界三大瀑布之一，自然奇观与冒险天堂。</p>
+        <p class="en">One of the world's greatest waterfalls.</p>
+      </div>
     </div>
 
-    <div class="dest-card">
-      <h3>South Africa</h3>
-      <p class="en">Wildlife, wine, coastline and modern cities.</p>
-      <p class="cn">野生动物、葡萄酒、海岸线与现代城市。</p>
+    <div class="dest-card slide-left">
+      <div class="dest-bg" style="background-image:url('images/south-africa.jpg')"></div>
+      <div class="dest-content">
+        <h3 class="cn">南非</h3>
+        <h3 class="en">South Africa</h3>
+        <p class="cn">野生动物、葡萄酒庄、海岸线与现代城市。</p>
+        <p class="en">Wildlife, wine, coastline and modern cities.</p>
+      </div>
     </div>
 
-    <div class="dest-card">
-      <h3>Namibia</h3>
-      <p class="en">Deserts, dunes, silence and surreal landscapes.</p>
-      <p class="cn">沙漠、沙丘、极致宁静与超现实风景。</p>
+    <div class="dest-card slide-right">
+      <div class="dest-bg" style="background-image:url('images/namibia.jpg')"></div>
+      <div class="dest-content">
+        <h3 class="cn">纳米比亚</h3>
+        <h3 class="en">Namibia</h3>
+        <p class="cn">沙漠、沙丘、极致宁静与超现实景观。</p>
+        <p class="en">Deserts, dunes, silence and surreal landscapes.</p>
+      </div>
     </div>
 
-    <div class="dest-card">
-      <h3>Botswana</h3>
-      <p class="en">Okavango Delta, Chobe ational Park</p>
-      <p class="cn">奥卡万戈三角洲· 乔贝国家公园。</p>
+    <div class="dest-card slide-left">
+      <div class="dest-bg" style="background-image:url('images/botswana.jpg')"></div>
+      <div class="dest-content">
+        <h3 class="cn">博茨瓦纳</h3>
+        <h3 class="en">Botswana</h3>
+        <p class="cn">奥卡万戈三角洲、乔贝国家公园。</p>
+        <p class="en">Okavango Delta, Chobe National Park.</p>
+      </div>
     </div>
+
   </div>
-</div>
+</section>
 
 <script>
   function toggleMenu() {
@@ -253,13 +303,25 @@
   }
 
   function setLang(lang) {
-    document.querySelectorAll('.en').forEach(e => {
-      e.style.display = lang === 'en' ? 'block' : 'none';
+    document.querySelectorAll('.en').forEach(el => {
+      el.style.display = lang === 'en' ? 'block' : 'none';
     });
-    document.querySelectorAll('.cn').forEach(e => {
-      e.style.display = lang === 'cn' ? 'block' : 'none';
+    document.querySelectorAll('.cn').forEach(el => {
+      el.style.display = lang === 'cn' ? 'block' : 'none';
     });
   }
+
+  const cards = document.querySelectorAll('.dest-card');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  cards.forEach(card => observer.observe(card));
 </script>
 
 </body>
