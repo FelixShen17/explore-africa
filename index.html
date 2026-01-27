@@ -651,7 +651,6 @@ nav a::after {
   .elite-card {
     height: 280px;
     border-radius: 16px;
-    transform: none !important;
     opacity: 1;
   }
 
@@ -763,6 +762,53 @@ nav a::after {
   }
 
 }
+
+}
+/* ========================= */
+/* DESKTOP – ELITE GRID FIX */
+/* ========================= */
+
+@media (min-width: 769px) {
+
+  .elite-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 两列 */
+    gap: 40px;
+  }
+
+}
+
+/* ========================= */
+/* DESKTOP – ELITE GRID FIX */
+/* ========================= */
+
+@media (min-width: 769px) {
+
+  .elite-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 两列 */
+    gap: 40px;
+  }
+
+}
+/* ========================= */
+/* MOBILE – CARD ANIMATION */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  /* 初始状态：下移 + 透明 */
+  .elite-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s ease;
+  }
+
+  /* 出现时 */
+  .elite-card.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
 }
 
