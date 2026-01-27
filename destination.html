@@ -114,6 +114,25 @@
     }
 
     .dest-card {
+.dest-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  pointer-events: none;
+
+  opacity: 0;
+  transition: opacity .45s ease;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,170,80,0.65),
+      rgba(255,140,60,0.25),
+      transparent 60%
+    );
+}
+
       position: relative;
       height: 340px;
       border-radius: 22px;
@@ -163,6 +182,37 @@
       opacity: 0.6;
       margin-top: 8px;
     }
+.dest-card:hover {
+  transform: scale(1.04);
+}
+
+.dest-card:hover::after {
+  opacity: 1;
+}
+.dest-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  padding: 1px;
+
+  background: linear-gradient(
+    120deg,
+    rgba(255,170,80,0.9),
+    rgba(255,140,60,0.4),
+    transparent 70%
+  );
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+
 
     /* ================= MOBILE ================= */
 
@@ -217,6 +267,32 @@
       }
 
     }
+.dest-card:hover::before {
+  opacity: 1;
+}
+.dest-card:hover .dest-bg {
+  filter: brightness(0.85);
+  transition: filter .4s ease;
+}
+.dest-card:hover h3 {
+  transform: translateY(-4px);
+  transition: transform .4s ease;
+}
+/* 🔒 Destination card link reset */
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-link:visited {
+  color: inherit;
+}
+
+.card-link:hover {
+  color: inherit;
+}
+
   </style>
 </head>
 
@@ -243,7 +319,7 @@
   </div>
 
   <div class="dest-grid">
-
+<a href="tanzania.html" class="card-link">
     <div class="dest-card slide-left">
       <div class="dest-bg" style="background-image:url('images/tanzania.jpg')"></div>
       <div class="dest-content">
@@ -253,7 +329,8 @@
         <p class="en">Classic safari, Mount Kilimanjaro, great migration, vast savannahs.</p>
       </div>
     </div>
-
+</a>
+<a href="victoria.html" class="card-link">
     <div class="dest-card slide-right">
       <div class="dest-bg" style="background-image:url('images/victoria.jpg')"></div>
       <div class="dest-content">
@@ -263,7 +340,8 @@
         <p class="en">One of the world's greatest waterfalls.</p>
       </div>
     </div>
-
+</a>
+<a href="south-africa.html" class="card-link">
     <div class="dest-card slide-left">
       <div class="dest-bg" style="background-image:url('images/south-africa.jpg')"></div>
       <div class="dest-content">
@@ -273,7 +351,8 @@
         <p class="en">Wildlife, wine, coastline and modern cities.</p>
       </div>
     </div>
-
+</a>
+<a href="namibia.html" class="card-link">
     <div class="dest-card slide-right">
       <div class="dest-bg" style="background-image:url('images/namibia.jpg')"></div>
       <div class="dest-content">
@@ -283,7 +362,8 @@
         <p class="en">Deserts, dunes, silence and surreal landscapes.</p>
       </div>
     </div>
-
+</a>
+<a href="botswana.html" class="card-link">
     <div class="dest-card slide-left">
       <div class="dest-bg" style="background-image:url('images/botswana.jpg')"></div>
       <div class="dest-content">
@@ -293,7 +373,7 @@
         <p class="en">Okavango Delta, Chobe National Park.</p>
       </div>
     </div>
-
+</a>
   </div>
 </section>
 
