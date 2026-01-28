@@ -217,6 +217,26 @@
         padding:18px 0;
       }
     }
+/* ========================= */
+/* MOBILE – CONTACT CARD ANIM */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .contact-card {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s cubic-bezier(.2,.8,.2,1);
+  }
+
+  .contact-card.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
 
   </style>
 </head>
@@ -273,6 +293,21 @@
   </div>
 
 </section>
+<script>
+  const contactCard = document.querySelector('.contact-card');
+
+  if (contactCard) {
+    const contactObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.4 });
+
+    contactObserver.observe(contactCard);
+  }
+</script>
 
 </body>
 </html>
