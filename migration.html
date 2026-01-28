@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Great Migration | 动物大迁徙</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family:"Poppins",sans-serif;
+      background:#0f1115;
+      color:#fff;
+    }
+
+    /* ================= HEADER ================= */
+    header{
+      position:fixed;
+      top:0;left:0;
+      width:100%;
+      padding:22px 60px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:10;
+    }
+
+    .logo{
+      font-family:"Playfair Display",serif;
+      font-size:20px;
+      letter-spacing:3px;
+    }
+
+    nav a{
+      margin-left:26px;
+      text-decoration:none;
+      color:#fff;
+      font-size:13px;
+      letter-spacing:2px;
+    }
+
+    /* ================= HERO ================= */
+    .hero{
+      height:100vh;
+      background:url("images/migration-hero.jpg") center/cover no-repeat;
+      display:flex;
+      align-items:center;
+      padding:0 80px;
+      position:relative;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to right,
+        rgba(0,0,0,.75),
+        rgba(0,0,0,.3)
+      );
+    }
+
+    .hero-content{
+      position:relative;
+      max-width:620px;
+    }
+
+    .hero h1{
+      font-family:"Playfair Display",serif;
+      font-size:54px;
+      margin-bottom:18px;
+    }
+
+    .hero p{
+      font-size:16px;
+      line-height:1.9;
+      opacity:.9;
+    }
+
+    /* ================= SECTION ================= */
+    section{
+      padding:110px 80px;
+    }
+
+    .section-title{
+      font-family:"Playfair Display",serif;
+      font-size:40px;
+      margin-bottom:70px;
+      text-align:center;
+    }
+
+    /* ================= CARD LIST ================= */
+    .migration-list{
+      max-width:980px;
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      gap:70px;
+    }
+
+    .migration-card{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:26px;
+      opacity:0;
+      transform:translateY(60px);
+      transition:all .9s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .migration-card.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .migration-img{
+      width:100%;
+      height:520px;
+      border-radius:26px;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .migration-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .8s ease;
+    }
+
+    .migration-card:hover img{
+      transform:scale(1.06);
+    }
+
+    .migration-text h3{
+      font-family:"Playfair Display",serif;
+      font-size:30px;
+      margin-bottom:16px;
+    }
+
+    .migration-text p{
+      font-size:15px;
+      line-height:1.9;
+      opacity:.9;
+    }
+
+    .migration-text .en{
+      margin-top:12px;
+      font-size:14px;
+      opacity:.7;
+    }
+
+    /* ================= FOOTER ================= */
+    footer{
+      text-align:center;
+      padding:40px;
+      font-size:12px;
+      opacity:.5;
+    }
+
+    /* ================= MOBILE ================= */
+    @media (max-width:768px){
+
+      header{padding:20px 26px;}
+
+      .hero{
+        padding:0 26px;
+      }
+
+      .hero h1{
+        font-size:40px;
+      }
+
+      section{
+        padding:90px 26px;
+      }
+
+      .migration-img{
+        height:320px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">EXPLORE AFRICA.</div>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="destination.html">DESTINATION</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>
+      The Great Migration<br>
+      东非动物大迁徙
+    </h1>
+    <p>
+      A timeless journey across Serengeti and Masai Mara.<br>
+      横跨塞伦盖蒂与马赛马拉的生命史诗。
+    </p>
+  </div>
+</div>
+
+<!-- ================= CONTENT ================= -->
+<section>
+
+  <h2 class="section-title">
+    Serengeti – Masai Mara Migration<br>
+    塞伦盖蒂—马赛马拉大迁徙
+  </h2>
+
+  <div class="migration-list">
+
+    <!-- Card 1 -->
+    <div class="migration-card">
+      <div class="migration-img">
+        <img src="images/migration-1.jpg" alt="">
+      </div>
+      <div class="migration-text">
+        <h3>年度生命循环</h3>
+        <p>
+          东非塞伦盖蒂—马赛马拉动物大迁徙，是地球上规模最大、最壮观的野生动物迁徙现象之一。
+        </p>
+        <p class="en">
+          The Great Migration of Serengeti–Masai Mara is one of the largest and most spectacular wildlife movements on Earth.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="migration-card">
+      <div class="migration-img">
+        <img src="images/migration-2.jpg" alt="">
+      </div>
+      <div class="migration-text">
+        <h3>逐雨而行</h3>
+        <p>
+          迁徙的核心驱动力是降雨、青草与水源，数百万角马、斑马与瞪羚随季节不断移动。
+        </p>
+        <p class="en">
+          Driven by rainfall, fresh pastures and water, millions of wildebeest, zebras and gazelles move in a continuous cycle.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="migration-card">
+      <div class="migration-img">
+        <img src="images/migration-3.jpg" alt="">
+      </div>
+      <div class="migration-text">
+        <h3>角马产仔季</h3>
+        <p>
+          每年初的产仔季，短短数周内将诞生数十万只小角马，是迁徙中最充满生命力的阶段。
+        </p>
+        <p class="en">
+          During calving season, hundreds of thousands of wildebeest calves are born within weeks, marking the most vibrant phase of the migration.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="migration-card">
+      <div class="migration-img">
+        <img src="images/migration-4.jpg" alt="">
+      </div>
+      <div class="migration-text">
+        <h3>马拉河 · 天国之渡</h3>
+        <p>
+          马拉河穿越，是迁徙中最震撼也最残酷的时刻，象征着自然选择与生命的极限考验。
+        </p>
+        <p class="en">
+          The dramatic Mara River crossings represent the most intense and iconic moment of the migration — a true test of survival.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<footer>© Explore Africa · Great Migration</footer>
+
+<script>
+  const cards = document.querySelectorAll('.migration-card');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>
