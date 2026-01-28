@@ -120,6 +120,41 @@
     0 18px 36px rgba(255,140,60,.25);
 }
 
+/* ===== Experience cards (Kilimanjaro & Serengeti) ===== */
+
+.experience-card{
+  height:260px;
+  padding:26px;
+  border-radius:18px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  background-size:cover;
+  background-position:center;
+  transition:.45s ease;
+}
+
+/* Kilimanjaro background */
+.kili-card .experience-card{
+  background:
+    linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,.25)),
+    url("images/kilimanjaro-hero.jpg") center / cover no-repeat;
+}
+
+/* Serengeti background */
+.serengeti-card .experience-card{
+  background:
+    linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,.25)),
+    url("images/serengeti-card.jpg") center / cover no-repeat;
+}
+
+.kili-card:hover .experience-card,
+.serengeti-card:hover .experience-card{
+  transform:translateY(-6px);
+  box-shadow:
+    0 0 0 1px rgba(255,170,80,.55),
+    0 18px 36px rgba(0,0,0,.6);
+}
 
   </style>
 </head>
@@ -147,50 +182,49 @@
 
 <section>
   <h2>Experiences · 精选体验</h2>
+
   <div class="card-grid">
+
+    <!-- Zanzibar -->
     <a href="zanzibar.html" class="card-link zanzibar-card">
-  <div class="card card-bg">
-    <div class="card-bg-img"
-         style="background-image:url('images/zanzibar-hero.jpg')"></div>
+      <div class="card card-bg">
+        <div class="card-bg-img"
+             style="background-image:url('images/zanzibar-hero.jpg')"></div>
 
-    <div class="card-content">
-      <h3>Zanzibar<br>桑给巴尔岛</h3>
-      <p>
-        Indian Ocean island paradise.<br>
-        印度洋上的传奇群岛。
-      </p>
-    </div>
+        <div class="card-content">
+          <h3>Zanzibar<br>桑给巴尔岛</h3>
+          <p>
+            Indian Ocean island paradise.<br>
+            印度洋上的传奇群岛。
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Kilimanjaro -->
+    <a href="kilimanjaro.html" class="card-link kili-card">
+      <div class="card experience-card">
+        <h3>Mount Kilimanjaro<br>乞力马扎罗山</h3>
+        <p>
+          Journey across four seasons.<br>
+          跨越四季的生命旅程。
+        </p>
+      </div>
+    </a>
+
+    <!-- Serengeti -->
+    <a href="migration.html" class="card-link serengeti-card">
+      <div class="card experience-card">
+        <h3>Serengeti Migration<br>塞伦盖蒂大迁徙</h3>
+        <p>
+          The world’s greatest wildlife spectacle.<br>
+          世界级野生动物大迁徙奇观。
+        </p>
+      </div>
+    </a>
+
   </div>
-</a>
-<div class="card-grid">
-
-  <!-- Kilimanjaro -->
-  <a href="kilimanjaro.html" class="card-link">
-    <div class="card experience-card kili-card">
-      <h3>Mount Kilimanjaro<br>乞力马扎罗山</h3>
-      <p>
-        Journey across four seasons.<br>
-        跨越四季的生命旅程。
-      </p>
-    </div>
-  </a>
-
-  <!-- Serengeti / Great Migration -->
-  <a href="migration.html" class="card-link">
-    <div class="card experience-card serengeti-card">
-      <h3>Serengeti Migration<br>塞伦盖蒂大迁徙</h3>
-      <p>
-        The world’s greatest wildlife spectacle.<br>
-        世界级野生动物大迁徙奇观。
-      </p>
-    </div>
-  </a>
-
-</div>
-
 </section>
-
-<footer>© Explore Africa · Tanzania</footer>
 
 </body>
 </html>
