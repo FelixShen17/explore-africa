@@ -66,6 +66,60 @@
 .card-link:hover {
   color: inherit;
 }
+/* ===== Zanzibar Featured Card ===== */
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-bg {
+  position: relative;
+  height: 260px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.card-bg-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6);
+  transition: transform .6s ease, filter .6s ease;
+}
+
+.card-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.7),
+    rgba(0,0,0,.25),
+    transparent
+  );
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  padding: 24px;
+}
+
+.zanzibar-card .card:hover .card-bg-img {
+  transform: scale(1.08);
+  filter: brightness(0.8);
+}
+
+.zanzibar-card .card:hover {
+  box-shadow:
+    0 0 0 1px rgba(255,170,80,.55),
+    0 18px 36px rgba(255,140,60,.25);
+}
+
 
   </style>
 </head>
