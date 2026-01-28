@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Zanzibar | 桑给巴尔岛</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:Poppins,sans-serif;
+  background:#0f1115;
+  color:#fff;
+}
+
+/* ===== HEADER ===== */
+header{
+  position:fixed;
+  top:0;left:0;width:100%;
+  padding:24px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:20;
+  background:linear-gradient(to bottom,rgba(15,17,21,.7),transparent);
+}
+.logo{
+  font-family:"Playfair Display";
+  letter-spacing:3px;
+}
+nav a{
+  margin-left:26px;
+  font-size:13px;
+  letter-spacing:2px;
+  text-decoration:none;
+  color:#fff;
+}
+
+/* ===== HERO ===== */
+.hero{
+  height:100vh;
+  background:
+    linear-gradient(to right,rgba(0,0,0,.75),rgba(0,0,0,.25)),
+    url("images/zanzibar-hero.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  padding:0 80px;
+}
+.hero h1{
+  font-family:"Playfair Display";
+  font-size:56px;
+  margin-bottom:20px;
+}
+.hero p{
+  font-size:16px;
+  line-height:1.8;
+  opacity:.85;
+}
+
+/* ===== SECTION ===== */
+section{
+  padding:110px 80px;
+}
+.section-title{
+  font-family:"Playfair Display";
+  font-size:40px;
+  margin-bottom:70px;
+}
+
+/* ===== EXPERIENCE ===== */
+.experience{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:70px;
+  margin-bottom:120px;
+  align-items:center;
+}
+.experience.reverse{
+  grid-template-columns:1fr 1.1fr;
+}
+.exp-img{
+  height:420px;
+  border-radius:26px;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  overflow:hidden;
+}
+.exp-img::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.55),transparent);
+}
+.exp-text h2{
+  font-family:"Playfair Display";
+  font-size:32px;
+  margin-bottom:18px;
+}
+.exp-text p{
+  font-size:15px;
+  line-height:1.9;
+  opacity:.88;
+}
+.en{
+  margin-top:14px;
+  font-size:14px;
+  opacity:.65;
+}
+
+/* ===== DOUBLE IMAGE ===== */
+.double-img{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px;
+}
+.double-img .exp-img{
+  height:360px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:40px;
+  font-size:12px;
+  opacity:.45;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  header{padding:20px;}
+  .hero{padding:0 24px;}
+  .hero h1{font-size:42px;}
+  section{padding:80px 24px;}
+  .experience,
+  .experience.reverse{
+    grid-template-columns:1fr;
+  }
+  .exp-img{height:300px;}
+  .double-img{grid-template-columns:1fr;}
+}
+/* ===== Scroll Reveal ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(.2,.65,.25,1);
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 左右区分（更高级） */
+.reveal-left {
+  transform: translateX(-80px);
+}
+
+.reveal-right {
+  transform: translateX(80px);
+}
+
+.reveal-left.show,
+.reveal-right.show {
+  transform: translateX(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">EXPLORE AFRICA.</div>
+  <nav>
+    <a href="destination.html">DESTINATION</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>Zanzibar<br>桑给巴尔岛</h1>
+    <p>
+      印度洋上的传奇群岛，融合阿拉伯、非洲与欧洲文化。<br>
+      A semi-autonomous archipelago in the Indian Ocean, known for beaches, history and culture.
+    </p>
+  </div>
+</div>
+
+<section>
+
+<h2 class="section-title">Experiences · 精选体验</h2>
+
+<!-- Stone Town -->
+<div class="experience reveal reveal-left">
+  <div class="exp-img" style="background-image:url('images/stone-town.jpg')"></div>
+  <div class="exp-text">
+    <h2>石头城 · Stone Town</h2>
+    <p>
+      联合国教科文组织世界遗产，是桑给巴尔历史与文化的心脏。迷宫般的小巷中遍布手工艺品店、古董店和画廊，必访奴隶市场遗址、福达尼花园、奇迹屋等地标。
+    </p>
+    <p class="en">
+      A UNESCO World Heritage Site and cultural heart of Zanzibar, featuring winding alleys, markets, museums and historic landmarks.
+    </p>
+  </div>
+</div>
+
+<!-- Prison Island -->
+<div class="experience reverse reveal reveal-right">
+  <div class="exp-text">
+    <h2>监狱岛 · Prison Island</h2>
+    <p>
+      从石头城乘船即可抵达。岛上栖息着百岁以上的阿尔达布拉象龟，可近距离观察与喂食，周边海域也是浮潜胜地。
+    </p>
+    <p class="en">
+      A short boat ride from Stone Town, home to giant Aldabra tortoises and clear waters ideal for snorkeling.
+    </p>
+  </div>
+  <div class="exp-img" style="background-image:url('images/prison-island.jpg')"></div>
+</div>
+
+<!-- Paragliding -->
+<div class="experience reveal reveal-left">
+  <div class="exp-img" style="background-image:url('images/paragliding.jpg')"></div>
+  <div class="exp-text">
+    <h2>滑翔伞 · Paragliding</h2>
+    <p>
+      从空中俯瞰桑给巴尔岛的海岸线、珊瑚礁与热带植被，感受自由飞行与印度洋海风的震撼。
+    </p>
+    <p class="en">
+      Experience Zanzibar from the sky with panoramic views of beaches, reefs and lush landscapes.
+    </p>
+  </div>
+</div>
+
+<!-- Dolphin -->
+<div class="experience reverse reveal reveal-right">
+  <div class="exp-text">
+    <h2>追海豚 · Dolphin Watching</h2>
+    <p>
+      前往姆恩巴岛附近海域，在自然栖息地观察野生海豚。条件允许时，可在专业向导带领下与海豚同游。
+    </p>
+    <p class="en">
+      Observe wild dolphins around Mnemba Island and, when conditions allow, swim alongside them responsibly.
+    </p>
+  </div>
+  <div class="exp-img" style="background-image:url('images/dolphin.jpg')"></div>
+</div>
+
+<!-- Rock Restaurant -->
+<div class="experience reveal reveal-left">
+  <div class="double-img">
+    <div class="exp-img" style="background-image:url('images/rock-1.jpg')"></div>
+    <div class="exp-img" style="background-image:url('images/rock-2.jpg')"></div>
+  </div>
+  <div class="exp-text">
+    <h2>The Rock Restaurant</h2>
+    <p>
+      建在海中岩石上的传奇餐厅，主打新鲜海鲜与桑给巴尔风味料理。退潮可步行，涨潮需乘船，在印度洋美景中用餐。
+    </p>
+    <p class="en">
+      An iconic restaurant built on a rock in the ocean, offering seafood and breathtaking Indian Ocean views.
+    </p>
+  </div>
+</div>
+
+<!-- Turtle -->
+<div class="experience reverse reveal reveal-right">
+  <div class="exp-text">
+    <h2>海龟游泳 · Turtle Swimming</h2>
+    <p>
+      在清澈的海水中与海龟一同畅游，近距离观察这些温顺的海洋生物，体验人与自然的亲密连接。
+    </p>
+    <p class="en">
+      Swim alongside sea turtles in crystal-clear waters and enjoy a close connection with marine life.
+    </p>
+  </div>
+  <div class="exp-img" style="background-image:url('images/turtle.jpg')"></div>
+</div>
+
+</section>
+
+<footer>© Explore Africa · Zanzibar</footer>
+<script>
+const reveals = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.25
+  }
+);
+
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
