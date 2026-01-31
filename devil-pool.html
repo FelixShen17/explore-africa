@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Devil's Pool | 维多利亚瀑布 · 魔鬼池</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:Poppins,sans-serif;
+  background:#0f1115;
+  color:#fff;
+}
+
+/* ===== HEADER ===== */
+header{
+  position:fixed;
+  top:0;left:0;width:100%;
+  padding:24px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:20;
+  background:linear-gradient(to bottom,rgba(15,17,21,.7),transparent);
+}
+.logo{
+  font-family:"Playfair Display";
+  letter-spacing:3px;
+}
+nav a{
+  margin-left:26px;
+  font-size:13px;
+  letter-spacing:2px;
+  text-decoration:none;
+  color:#fff;
+}
+
+/* ===== HERO ===== */
+.hero{
+  height:100vh;
+  background:
+    linear-gradient(to right,rgba(0,0,0,.78),rgba(0,0,0,.25)),
+    url("images/devils-hero.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  padding:0 80px;
+}
+.hero-inner{
+  max-width:580px;
+}
+.hero h1{
+  font-family:"Playfair Display";
+  font-size:56px;
+  margin-bottom:20px;
+}
+.hero .tagline{
+  font-size:13px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  opacity:.7;
+  margin-bottom:14px;
+}
+.hero p{
+  font-size:16px;
+  line-height:1.9;
+  opacity:.88;
+}
+.hero-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-top:26px;
+  font-size:13px;
+}
+.hero-meta-item{
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(0,0,0,.45);
+}
+.hero-meta-item span:first-child{
+  opacity:.7;
+  margin-right:6px;
+}
+
+/* ===== SECTION ===== */
+section{
+  padding:110px 80px;
+}
+.section-title{
+  font-family:"Playfair Display";
+  font-size:40px;
+  margin-bottom:70px;
+}
+
+/* ===== EXPERIENCE BLOCK ===== */
+.experience{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:70px;
+  margin-bottom:120px;
+  align-items:center;
+}
+.experience.reverse{
+  grid-template-columns:1fr 1.1fr;
+}
+.exp-img{
+  height:420px;
+  border-radius:26px;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  overflow:hidden;
+}
+.exp-img::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.55),transparent);
+}
+.exp-text h2{
+  font-family:"Playfair Display";
+  font-size:32px;
+  margin-bottom:18px;
+}
+.exp-text p{
+  font-size:15px;
+  line-height:1.9;
+  opacity:.88;
+}
+.en{
+  margin-top:14px;
+  font-size:14px;
+  opacity:.65;
+}
+
+/* ===== DOUBLE IMAGE (小卡片三图区用双图结构延伸) ===== */
+.double-img{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px;
+}
+.double-img .exp-img{
+  height:260px;
+}
+
+/* ===== MINI CARD GALLERY (3 张小卡片照片区) ===== */
+.gallery-row{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:70px;
+  margin-bottom:120px;
+  align-items:center;
+}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.gallery-item{
+  position:relative;
+  height:150px;
+  border-radius:18px;
+  overflow:hidden;
+  background-size:cover;
+  background-position:center;
+  cursor:pointer;
+  box-shadow:0 16px 30px rgba(0,0,0,.6);
+  transform:translateY(0);
+  transition:
+    transform .45s cubic-bezier(.2,.65,.25,1),
+    box-shadow .45s ease,
+    filter .45s ease;
+}
+.gallery-item::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.65),rgba(0,0,0,.15));
+}
+.gallery-label{
+  position:absolute;
+  left:12px;
+  bottom:12px;
+  font-size:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  z-index:2;
+}
+.gallery-item:hover{
+  transform:translateY(-10px);
+  box-shadow:0 26px 60px rgba(0,0,0,.75);
+  filter:brightness(1.05);
+}
+
+/* 示例图片类（你按自己的图片路径替换） */
+.g1{background-image:url("images/devils-edge.jpg");}
+.g2{background-image:url("images/devils-rock.jpg");}
+.g3{background-image:url("images/devils-rainbow.jpg");}
+
+/* ===== INFO CARD ===== */
+.info-card{
+  border-radius:24px;
+  border:1px solid rgba(255,255,255,.12);
+  padding:32px 30px;
+  background:linear-gradient(135deg,rgba(15,17,21,.95),rgba(15,17,21,.8));
+}
+.info-card h3{
+  font-family:"Playfair Display";
+  font-size:26px;
+  margin-bottom:14px;
+}
+.info-card p{
+  font-size:14px;
+  line-height:1.9;
+  opacity:.85;
+}
+.info-grid{
+  margin-top:20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px 26px;
+  font-size:13px;
+}
+.info-label{
+  opacity:.7;
+  margin-bottom:4px;
+}
+.info-value{
+  opacity:.95;
+}
+.info-note{
+  margin-top:18px;
+  font-size:13px;
+  opacity:.7;
+}
+
+/* ===== SAFETY ===== */
+.safety{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:70px;
+  align-items:flex-start;
+}
+.safety h2{
+  font-family:"Playfair Display";
+  font-size:32px;
+  margin-bottom:18px;
+}
+.safety p{
+  font-size:15px;
+  line-height:1.9;
+  opacity:.88;
+}
+.safety-list{
+  margin-top:22px;
+  font-size:14px;
+  line-height:1.9;
+  opacity:.9;
+}
+.safety-list li{
+  margin-bottom:8px;
+}
+.safety-list ul{
+  list-style:disc;
+  padding-left:18px;
+}
+.safety-card{
+  border-radius:22px;
+  padding:26px 24px;
+  background:radial-gradient(circle at top left,rgba(248,113,113,.25),rgba(15,17,21,.98));
+  border:1px solid rgba(248,113,113,.7);
+  font-size:14px;
+}
+.safety-card h3{
+  font-family:"Playfair Display";
+  font-size:22px;
+  margin-bottom:12px;
+}
+.safety-card ul{
+  list-style:disc;
+  padding-left:18px;
+  line-height:1.9;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:40px;
+  font-size:12px;
+  opacity:.45;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  header{padding:20px;}
+  .hero{padding:0 24px;}
+  .hero h1{font-size:42px;}
+  section{padding:80px 24px;}
+  .experience,
+  .experience.reverse{
+    grid-template-columns:1fr;
+  }
+  .exp-img{height:300px;}
+  .gallery-row{
+    grid-template-columns:1fr;
+  }
+  .gallery-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+  .safety{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ===== Scroll Reveal ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(.2,.65,.25,1);
+}
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 左右入场 */
+.reveal-left {
+  transform: translateX(-80px);
+}
+.reveal-right {
+  transform: translateX(80px);
+}
+.reveal-left.show,
+.reveal-right.show {
+  transform: translateX(0);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">EXPLORE AFRICA.</div>
+  <nav>
+    <a href="index.html">DESTINATION</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="tagline">VICTORIA FALLS · DEVIL'S POOL</div>
+    <h1>Devil's Pool<br>魔鬼池</h1>
+    <p>
+      维多利亚瀑布顶端的天然“边缘泳池”，也是世界上最惊险的自然泳池之一。
+      在这里，你可以躺在瀑布边缘向下俯视近百米深的赞比西峡谷，感受
+      水雾、轰鸣与心跳同时在耳边回响。
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span>季节：</span><span>旱季约 8–12 月开放，视水位而定</span>
+      </div>
+      <div class="hero-meta-item">
+        <span>体验：</span><span>边缘游泳 · 俯瞰峡谷 · 日出 / 日落行程</span>
+      </div>
+      <div class="hero-meta-item">
+        <span>难度：</span><span>中等（建议会游泳）</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+
+  <h2 class="section-title">Devil's Pool · 关于魔鬼池</h2>
+
+  <!-- 文化意义 + 整体介绍 -->
+  <div class="experience reveal reveal-left">
+    <div class="exp-img" style="background-image:url('images/devils-overview.jpg')"></div>
+    <div class="exp-text">
+      <h2>文化意义 · 雷鸣之烟的边缘</h2>
+      <p>
+        维多利亚瀑布在当地被称为「莫西奥图尼亚」（Mosi-oa-Tunya），意为
+        「雷鸣之烟」。奔腾的赞比西河在这里骤然跌落，水雾翻涌到天空，
+        发出持续不绝的轰鸣声。魔鬼池正位于瀑布顶端一处天然岩石洼地中，
+        在安全水位下形成一个被岩石包围的小水池。
+      </p>
+      <p class="en">
+        Known locally as “Mosi-oa-Tunya” – the Smoke that Thunders – Victoria Falls is
+        a UNESCO World Heritage Site. Devil's Pool sits right at the edge of the falls,
+        formed by a natural rock lip that allows visitors to swim close to the drop during
+        low water season.
+      </p>
+    </div>
+  </div>
+
+  <!-- 体验特点 -->
+  <div class="experience reverse reveal reveal-right">
+    <div class="exp-text">
+      <h2>体验特点 · 在瀑布边缘游泳</h2>
+      <p>
+        在专业向导带领下，你会先乘船或步行前往瀑布顶端，再通过
+        一小段涉水或游泳，进入魔鬼池。当水量安全且清澈时，你可以趴在
+        瀑布边缘，俯视下方近百米深的峡谷与翻滚的水雾，这段被誉为
+        「在瀑布边缘游泳」的体验，是极限爱好者的象征目的地。
+      </p>
+      <p class="en">
+        Guided tours take you across the river to the very edge, where you can safely sit
+        or lie on the rock lip while water rushes past and plunges over the falls. It’s a
+        once-in-a-lifetime experience for those who seek thrill with controlled safety.
+      </p>
+    </div>
+    <div class="exp-img" style="background-image:url('images/devils-swim.jpg')"></div>
+  </div>
+
+  <!-- 三张小卡片照片 + 信息卡片 -->
+  <div class="gallery-row reveal reveal-left">
+    <div>
+      <h2 style="font-family:'Playfair Display';font-size:28px;margin-bottom:22px;">
+        现场一瞥 · Three Moments
+      </h2>
+      <p style="font-size:15px;line-height:1.9;opacity:.88;margin-bottom:26px;">
+        近距离感受魔鬼池的三种典型画面：俯瞰瀑布边缘、岩石形成的天然“防波堤”，
+        以及阳光穿透水雾形成的彩虹。
+      </p>
+      <div class="gallery-grid">
+        <div class="gallery-item g1">
+          <div class="gallery-label">EDGE VIEW</div>
+        </div>
+        <div class="gallery-item g2">
+          <div class="gallery-label">ROCK LIP</div>
+        </div>
+        <div class="gallery-item g3">
+          <div class="gallery-label">RAINBOW MIST</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card reveal reveal-right">
+      <h3>实用信息 · Practical Info</h3>
+      <p>
+        魔鬼池位于赞比西河中段、赞比亚一侧瀑布顶端，只在水位足够低、
+        且被官方认定为安全的季节开放。所有行程必须通过正规、持证的
+        向导或运营商预订。
+      </p>
+      <div class="info-grid">
+        <div>
+          <div class="info-label">位置 · Location</div>
+          <div class="info-value">Zambezi River, Victoria Falls edge, Zambia side</div>
+        </div>
+        <div>
+          <div class="info-label">开放时间 · Season</div>
+          <div class="info-value">通常为 8–12 月，具体依当年水位而调整</div>
+        </div>
+        <div>
+          <div class="info-label">到达方式 · Access</div>
+          <div class="info-value">多从赞比亚利文斯通出发，船只+短距离涉水 / 游泳</div>
+        </div>
+        <div>
+          <div class="info-label">适合人群 · Who</div>
+          <div class="info-value">身体健康，建议会游泳。不适合严重恐高或心血管疾病者</div>
+        </div>
+      </div>
+      <div class="info-note">
+        多数体验产品可搭配早餐、午餐或日落巡游，请在预订时确认
+        是否包含摄影服务与保险。
+      </div>
+    </div>
+  </div>
+
+  <!-- 安全与尊重 -->
+  <div class="safety reveal reveal-left">
+    <div>
+      <h2>安全与尊重 · Safety &amp; Respect</h2>
+      <p>
+        魔鬼池的刺激来自「极近危险但经过控制」。真正的安全感，
+        来自对自然的敬畏与对规则的尊重。请将这段体验视作
+        世界自然遗产中的一场「特许冒险」，而不是可以随意挑战的极限游戏。
+      </p>
+      <div class="safety-list">
+        <ul>
+          <li>仅在官方允许的水位和时段进入魔鬼池，不要私自靠近瀑布边缘。</li>
+          <li>全程听从专业向导指示，不做翻滚、冲刺跳水等高风险动作。</li>
+          <li>贵重物品与电子设备做好防水与固定，避免掉入水中或影响行动。</li>
+          <li>尊重当地文化与自然环境，不乱丢垃圾，不破坏岩石与植被。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="safety-card reveal reveal-right">
+      <h3>重要提醒 · 必读</h3>
+      <ul>
+        <li>魔鬼池在高水位、洪水季节会完全关闭，即使预订成功也可能因安全原因临时取消，请保持弹性行程安排。</li>
+        <li>务必通过正规运营商预订（可参考酒店或官方旅游信息中心推荐），不要接受来历不明的「私人带玩」。</li>
+        <li>进入水中前勿饮酒；如有健康状况或不会游泳，请提前告知向导，由其判断是否适合参与。</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<footer>© Explore Africa · Devil's Pool, Victoria Falls</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.25
+  }
+);
+
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
