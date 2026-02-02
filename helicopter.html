@@ -174,10 +174,55 @@
         transform: translateY(0);
       }
     }
+    /* 返回按钮 */
+.back-btn {
+  max-width: 1100px;
+  margin: 0 auto 20px;
+}
+
+.back-btn a {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  transition: all 0.35s ease;
+}
+
+.back-btn .cn {
+  font-size: 0.9rem;
+}
+
+.back-btn .en {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.back-btn a:hover {
+  background: rgba(0,255,255,0.25);
+  box-shadow: 0 10px 30px rgba(0,255,255,0.35);
+  transform: translateY(-2px);
+}
+
+
   </style>
 </head>
 <body>
-  <div class="container">
+ <div class="back-btn">
+  <a href="victoria-falls.html">
+    <span class="cn">← 返回到 维多利亚瀑布</span>
+    <span class="en">Back to Victoria Falls</span>
+  </a>
+</div>
+
+
+  <header>
+
     <header>
       <h1>直升机俯瞰维多利亚瀑布</h1>
       <h2>Helicopter Flight over Victoria Falls</h2>
