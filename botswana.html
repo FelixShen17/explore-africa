@@ -83,13 +83,20 @@
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:28px;
     }
+.card{
+  position:relative;
+  background-size:cover;
+  background-position:center;
+  border-radius:18px;
+  padding:26px;
+  min-height:220px;
+  transition:.4s;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  overflow:hidden;
+}
 
-    .card{
-      background:#151820;
-      border-radius:18px;
-      padding:26px;
-      transition:.4s;
-    }
 
     .card:hover{
       transform:translateY(-8px);
@@ -153,35 +160,38 @@ nav a:hover{
 
  <div class="card-grid">
 
-  <a href="okavango.html" class="card-link">
-    <div class="card">
-      <h3>Okavango Delta<br>奥卡万戈三角洲</h3>
-      <p>
-        A unique inland delta full of life.<br>
-        世界罕见的内陆三角洲生态系统。
-      </p>
-    </div>
-  </a>
+<a href="okavango.html" class="card-link">
+  <div class="card" style="background-image:url('images/okavango-1.jpg')">
+    <h3>Okavango Delta<br>奥卡万戈三角洲</h3>
+    <p>
+      A unique inland delta full of life.<br>
+      世界罕见的内陆三角洲生态系统。
+    </p>
+  </div>
+</a>
+
 
   <a href="chobe.html" class="card-link">
-    <div class="card">
-      <h3>Chobe National Park<br>乔贝国家公园</h3>
-      <p>
-        Famous for massive elephant herds.<br>
-        以庞大的大象种群闻名。
-      </p>
-    </div>
-  </a>
+  <div class="card" style="background-image:url('images/chobe-hero.jpg')">
+    <h3>Chobe National Park<br>乔贝国家公园</h3>
+    <p>
+      Famous for massive elephant herds.<br>
+      以庞大的大象种群闻名。
+    </p>
+  </div>
+</a>
 
-  <a href="luxury-safari.html" class="card-link">
-    <div class="card">
-      <h3>Luxury Safari<br>高端野奢体验</h3>
-      <p>
-        Exclusive lodges and untouched nature.<br>
-        奢华营地与原始自然完美结合。
-      </p>
-    </div>
-  </a>
+
+<a href="luxury.html" class="card-link">
+  <div class="card" style="background-image:url('images/luxury-hero.jpg')">
+    <h3>Luxury Safari<br>高端野奢体验</h3>
+    <p>
+      Exclusive lodges and untouched nature.<br>
+      奢华营地与原始自然完美结合。
+    </p>
+  </div>
+</a>
+
 
 </div>
 
