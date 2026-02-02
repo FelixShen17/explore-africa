@@ -50,6 +50,37 @@
     }
 
     footer{text-align:center;padding:30px;font-size:12px;opacity:.5;}
+    /* Devil's Pool card background */
+.devil-card{
+  background-image:url("devils-swim.jpg");
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+  position:relative;
+  padding:26px;
+  min-height:260px;
+}
+
+/* 遮罩，保证文字清晰 */
+.devil-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.65),
+    rgba(0,0,0,.25)
+  );
+  border-radius:18px;
+}
+
+/* 把文字提到遮罩上层 */
+.devil-card h3,
+.devil-card p{
+  position:relative;
+  z-index:1;
+}
+
   </style>
 </head>
 
@@ -77,12 +108,13 @@
 <section>
   <h2>Experiences · 精选体验</h2>
   <div class="card-grid">
-    <a href="devil-pool.html" style="text-decoration: none; color: inherit;">
-           <div class="card" style="background-image: url('devils-swim.jpg'); background-size: cover; background-position: center; color: white; position: relative;">
-            <h3>Devil's Pool<br>魔鬼池</h3>
-            <p>Swim at the edge of the falls.<br>瀑布边缘的极限体验。</p >
-        </div>
-    </a >
+   <a href="devil-pool.html" style="text-decoration: none; color: inherit;">
+  <div class="card devil-card">
+    <h3>Devil's Pool<br>魔鬼池</h3>
+    <p>Swim at the edge of the falls.<br>瀑布边缘的极限体验。</p>
+  </div>
+</a>
+
     
 <a href="boat-flow.html" style="text-decoration: none; color: inherit;">
     <div class="card">
