@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Okavango Delta | 奥卡万戈三角洲</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:Poppins,sans-serif;
+  background:#0e1412;
+  color:#fff;
+}
+
+/* ===== HEADER ===== */
+header{
+  position:fixed;
+  top:0;left:0;width:100%;
+  padding:24px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:20;
+  background:linear-gradient(to bottom,rgba(14,20,18,.75),transparent);
+}
+.logo{
+  font-family:"Playfair Display";
+  letter-spacing:3px;
+}
+nav a{
+  margin-left:26px;
+  font-size:13px;
+  letter-spacing:2px;
+  text-decoration:none;
+  color:#fff;
+}
+
+/* ===== HERO ===== */
+.hero{
+  height:100vh;
+  background:
+    linear-gradient(to right,rgba(0,0,0,.75),rgba(0,0,0,.25)),
+    url("images/okavango-hero.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  padding:0 80px;
+}
+.hero h1{
+  font-family:"Playfair Display";
+  font-size:56px;
+  margin-bottom:20px;
+}
+.hero p{
+  font-size:16px;
+  line-height:1.8;
+  opacity:.85;
+}
+
+/* ===== SECTION ===== */
+section{
+  padding:110px 80px;
+}
+.section-title{
+  font-family:"Playfair Display";
+  font-size:40px;
+  margin-bottom:70px;
+}
+
+/* ===== EXPERIENCE ===== */
+.experience{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:70px;
+  margin-bottom:120px;
+  align-items:center;
+}
+.experience.reverse{
+  grid-template-columns:1fr 1.1fr;
+}
+.exp-img{
+  height:420px;
+  border-radius:26px;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  overflow:hidden;
+}
+.exp-img::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.55),transparent);
+}
+.exp-text h2{
+  font-family:"Playfair Display";
+  font-size:32px;
+  margin-bottom:18px;
+}
+.exp-text p{
+  font-size:15px;
+  line-height:1.9;
+  opacity:.88;
+}
+.en{
+  margin-top:14px;
+  font-size:14px;
+  opacity:.65;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:40px;
+  font-size:12px;
+  opacity:.45;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  header{padding:20px;}
+  .hero{padding:0 24px;}
+  .hero h1{font-size:42px;}
+  section{padding:80px 24px;}
+  .experience,
+  .experience.reverse{
+    grid-template-columns:1fr;
+  }
+  .exp-img{height:300px;}
+}
+
+/* ===== Scroll Reveal ===== */
+.reveal{
+  opacity:0;
+  transform:translateY(60px);
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(.2,.65,.25,1);
+}
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+.reveal-left{transform:translateX(-80px);}
+.reveal-right{transform:translateX(80px);}
+.reveal-left.show,
+.reveal-right.show{
+  transform:translateX(0);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">EXPLORE AFRICA.</div>
+  <nav>
+    <a href="destination.html">DESTINATION</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>Okavango Delta<br>奥卡万戈三角洲</h1>
+    <p>
+      非洲最后的原始天堂，水道、湿地与野生动物交织而成的生命奇迹。<br>
+      A pristine inland delta where water, wildlife and wilderness coexist in harmony.
+    </p>
+  </div>
+</div>
+
+<section>
+
+<h2 class="section-title">Experiences · 精选体验</h2>
+
+<!-- Wetlands -->
+<div class="experience reveal reveal-left">
+  <div class="exp-img" style="background-image:url('images/okavango-1.jpg')"></div>
+  <div class="exp-text">
+    <h2>湿地奇观 · Wetland Wonderland</h2>
+    <p>
+      季节性洪水塑造出世界最大的内陆三角洲，水草、泻湖与岛屿不断变化，孕育极其丰富的生态系统。
+    </p>
+    <p class="en">
+      Seasonal floods shape the world’s largest inland delta, creating ever-changing wetlands rich in biodiversity.
+    </p>
+  </div>
+</div>
+
+<!-- Wildlife -->
+<div class="experience reverse reveal reveal-right">
+  <div class="exp-text">
+    <h2>野生动物 · Wildlife Safari</h2>
+    <p>
+      大象、狮子、水牛、河马在这里自由迁徙，是非洲最纯粹的野生动物观赏地之一。
+    </p>
+    <p class="en">
+      Home to elephants, lions, buffalo and hippos, offering some of Africa’s most authentic wildlife encounters.
+    </p>
+  </div>
+  <div class="exp-img" style="background-image:url('images/okavango-2.jpg')"></div>
+</div>
+
+<!-- Mokoro -->
+<div class="experience reveal reveal-left">
+  <div class="exp-img" style="background-image:url('images/okavango-3.jpg')"></div>
+  <div class="exp-text">
+    <h2>独木舟 · Mokoro Canoe</h2>
+    <p>
+      乘坐传统独木舟悄然穿行于水道之间，贴近水面，聆听自然最真实的声音。
+    </p>
+    <p class="en">
+      Glide silently through narrow channels on a traditional mokoro canoe, immersed in nature.
+    </p>
+  </div>
+</div>
+
+<!-- Aerial -->
+<div class="experience reverse reveal reveal-right">
+  <div class="exp-text">
+    <h2>空中视角 · Aerial View</h2>
+    <p>
+      从空中俯瞰三角洲，水与陆地交织成抽象画卷，是理解奥卡万戈规模与美感的最佳方式。
+    </p>
+    <p class="en">
+      View the delta from above to fully appreciate its scale and natural artistry.
+    </p>
+  </div>
+  <div class="exp-img" style="background-image:url('images/okavango-4.jpg')"></div>
+</div>
+
+</section>
+
+<footer>© Explore Africa · Okavango Delta</footer>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.25});
+reveals.forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
