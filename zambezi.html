@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Zambezi River Cruise | 赞比西河游船</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:Poppins,sans-serif;
+  background:#0f1115;
+  color:#fff;
+}
+
+/* ================= HEADER ================= */
+header{
+  position:fixed;
+  top:0;left:0;width:100%;
+  padding:22px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:10;
+}
+.logo{
+  font-family:"Playfair Display",serif;
+  font-size:22px;
+}
+nav a{
+  margin-left:26px;
+  text-decoration:none;
+  color:#fff;
+  font-size:13px;
+  letter-spacing:2px;
+}
+
+/* ================= HERO ================= */
+.hero{
+  min-height:100vh;
+  background:url("images/zambezi-hero.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  padding:0 80px;
+  position:relative;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to right,
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.25)
+  );
+}
+.hero-content{
+  position:relative;
+  max-width:560px;
+}
+.hero h1{
+  font-family:"Playfair Display",serif;
+  font-size:52px;
+  margin-bottom:18px;
+}
+.hero p{
+  font-size:16px;
+  line-height:1.8;
+  opacity:.9;
+}
+
+/* ================= SECTION ================= */
+section{
+  padding:100px 80px;
+}
+h2{
+  font-family:"Playfair Display",serif;
+  font-size:36px;
+  margin-bottom:40px;
+}
+
+/* ================= IMAGE CARDS ================= */
+.image-column{
+  display:flex;
+  flex-direction:column;
+  gap:36px;
+}
+
+.image-card{
+  position:relative;
+  height:420px;
+  border-radius:24px;
+  overflow:hidden;
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 30px 70px rgba(0,0,0,.45);
+
+  opacity:0;
+  transform:translateY(60px);
+  transition:
+    opacity .9s ease,
+    transform .9s cubic-bezier(.2,.8,.2,1);
+}
+
+.image-card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.image-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.65),
+    rgba(0,0,0,.2)
+  );
+}
+
+.card-text{
+  position:absolute;
+  bottom:36px;
+  left:36px;
+  max-width:520px;
+  z-index:1;
+}
+.card-text h3{
+  font-family:"Playfair Display",serif;
+  font-size:28px;
+  margin-bottom:10px;
+}
+.card-text p{
+  font-size:15px;
+  line-height:1.8;
+  opacity:.9;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  header{
+    padding:20px 26px;
+  }
+  .hero{
+    padding:0 26px;
+  }
+  .hero h1{
+    font-size:38px;
+  }
+  section{
+    padding:80px 26px;
+  }
+  .image-card{
+    height:280px;
+  }
+  .card-text{
+    left:22px;
+    bottom:22px;
+  }
+  .card-text h3{
+    font-size:22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">EXPLORE AFRICA.</div>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="destination.html">DESTINATION</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>Zambezi River Cruise<br>赞比西河游船</h1>
+    <p>
+      A timeless journey along one of Africa’s greatest rivers.<br>
+      沿着非洲最伟大的河流之一，开启一段悠然与野性并存的旅程。
+    </p>
+  </div>
+</div>
+
+<!-- ================= CONTENT ================= -->
+<section>
+  <h2>Experience · 体验亮点</h2>
+
+  <div class="image-column">
+
+    <!-- Card 1 -->
+    <div class="image-card" style="background-image:url('images/zambezi-1.jpg')">
+      <div class="card-text">
+        <h3>Sunset Cruise · 日落游船</h3>
+        <p>
+          As the sun sets over the Zambezi, golden reflections dance across the river, creating one of Africa’s most romantic scenes.<br>
+          当夕阳缓缓沉入河面，金色的光影在赞比西河上流转，构成非洲最迷人的日落画面之一。
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="image-card" style="background-image:url('images/zambezi-2.jpg')">
+      <div class="card-text">
+        <h3>Wildlife Encounters · 野生动物邂逅</h3>
+        <p>
+          Hippos, crocodiles, elephants and birds are frequently seen along the riverbanks during the cruise.<br>
+          河岸两侧常可见河马、鳄鱼、大象与各类鸟类，近距离感受原始非洲生态。
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="image-card" style="background-image:url('images/zambezi-3.jpg')">
+      <div class="card-text">
+        <h3>Luxury on Water · 水上轻奢</h3>
+        <p>
+          Comfortable seating, drinks, and attentive service make the cruise both relaxing and refined.<br>
+          舒适的座椅、精致的饮品与贴心服务，让旅程在野性中不失优雅。
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="image-card" style="background-image:url('images/zambezi-4.jpg')">
+      <div class="card-text">
+        <h3>Peaceful Rhythm · 河流的节奏</h3>
+        <p>
+          The gentle flow of the Zambezi offers a peaceful contrast to the thunder of Victoria Falls upstream.<br>
+          与上游雷鸣般的瀑布不同，赞比西河以宁静的节奏抚慰人心。
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer style="text-align:center;padding:30px;font-size:12px;opacity:.5;">
+  © Explore Africa · Zambezi River Cruise
+</footer>
+
+<script>
+/* Scroll-in animation */
+const cards = document.querySelectorAll('.image-card');
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{threshold:0.25});
+
+cards.forEach(card=>observer.observe(card));
+</script>
+
+</body>
+</html>
