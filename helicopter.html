@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>直升机俯瞰维多利亚瀑布 | Helicopter over Victoria Falls</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB",
+        "Microsoft YaHei", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      animation: fadeDown 1s ease forwards;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header h2 {
+      font-size: 1.2rem;
+      font-weight: 300;
+      opacity: 0.85;
+    }
+
+    section.intro {
+      max-width: 900px;
+      margin: 0 auto 60px;
+      text-align: center;
+      font-size: 1.05rem;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.4s;
+    }
+
+    section.intro p {
+      margin-bottom: 12px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+.card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  transform: translateY(40px) scale(0.96);
+  opacity: 0;
+  animation: cardIn 0.9s ease forwards;
+  transition:
+    transform 0.45s cubic-bezier(.2,.8,.2,1),
+    border-radius 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+/* 跟随鼠标的光 */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(0, 255, 255, 0.35),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* 悬停：浮起 + 变圆 + 发光 */
+.card:hover {
+  transform: translateY(-10px) scale(1);
+  border-radius: 28px;
+  box-shadow: 0 30px 80px rgba(0, 255, 255, 0.25);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* 按下：真实触感 */
+.card:active {
+  transform: scale(0.97);
+  box-shadow: 0 18px 40px rgba(0, 255, 255, 0.45);
+}
+
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 22px;
+    }
+
+    .card-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .cn {
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .en {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 80px;
+      font-size: 0.85rem;
+      opacity: 0.6;
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes cardIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>直升机俯瞰维多利亚瀑布</h1>
+      <h2>Helicopter Flight over Victoria Falls</h2>
+    </header>
+
+    <section class="intro">
+      <p class="cn">
+        从空中俯瞰世界七大自然奇观之一，乘坐直升机感受维多利亚瀑布的震撼与壮丽。
+      </p>
+      <p class="en">
+        Experience one of the Seven Natural Wonders of the World from above and
+        witness the raw power of Victoria Falls by helicopter.
+      </p>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <img src="images/helicoper-1.jpg" />
+        <div class="card-content">
+          <h3>空中全景 / Aerial Panorama</h3>
+          <p class="cn">从高空一览瀑布全貌，水雾与彩虹尽收眼底。</p>
+          <p class="en">See the full stretch of the falls, with mist and rainbows below.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/helicoper-2.jpg" />
+        <div class="card-content">
+          <h3>专业飞行 / Professional Flight</h3>
+          <p class="cn">经验丰富的飞行员，确保安全与最佳观景路线。</p>
+          <p class="en">Flown by experienced pilots for safety and optimal views.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/helicoper-3.jpg" />
+        <div class="card-content">
+          <h3>赞比西河 / Zambezi River</h3>
+          <p class="cn">沿着赞比西河飞行，感受自然的原始力量。</p>
+          <p class="en">Follow the Zambezi River and feel the power of untouched nature.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © Victoria Falls Helicopter Experience | 直升机俯瞰瀑布
+    </footer>
+  </div>
+<script>
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--x', x + 'px');
+      card.style.setProperty('--y', y + 'px');
+    });
+  });
+</script>
+
+</body>
+</html>
